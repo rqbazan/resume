@@ -1,14 +1,18 @@
 import React from 'react'
-import { View, Image } from '@react-pdf/renderer'
+import { View } from '@react-pdf/renderer'
+import { withTheme } from '@react-pdf/styled-components'
+import RoundedIcon from '../rounded-icon'
 import { Container, Title, Description } from './elements'
 
-export default function Insight({ style, title, description, iconSource }) {
+function Insight({ style, theme, title, description, iconName }) {
   return (
     <Container style={style}>
-      {iconSource && (
-        <Image
-          source={iconSource}
-          style={{ width: 32, height: 32, marginRight: 6 }}
+      {iconName && (
+        <RoundedIcon
+          size={18}
+          name={iconName}
+          color={theme.colors.primary}
+          style={{ marginRight: 6 }}
         />
       )}
       <View style={{ flex: 1 }}>
@@ -18,3 +22,5 @@ export default function Insight({ style, title, description, iconSource }) {
     </Container>
   )
 }
+
+export default withTheme(Insight)

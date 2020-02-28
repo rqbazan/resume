@@ -1,13 +1,13 @@
 import React from 'react'
-import { Image } from '@react-pdf/renderer'
-import { Container, Name, Score } from './elements'
+import Score from '../score'
+import { Container, Name, Label } from './elements'
 
-export default function Language({ style, name, score, scoreSource }) {
+export default function Language({ style, name, scoreLabel, score }) {
   return (
     <Container style={style}>
       <Name>{name}</Name>
-      <Score>{score}</Score>
-      <Image style={{ height: 5 }} source={scoreSource} />
+      <Label>{scoreLabel}</Label>
+      <Score rank={score} />
     </Container>
   )
 }

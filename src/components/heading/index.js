@@ -1,6 +1,5 @@
 import React from 'react'
 import IconText from '../icon-text'
-import iconSources from '../../icon-sources'
 import { Container, Title, SubTitle, InfoContainer } from './elements'
 
 export default function Heading({ style, title, subtitle, information }) {
@@ -11,23 +10,20 @@ export default function Heading({ style, title, subtitle, information }) {
       <InfoContainer>
         <IconText
           text={information.phone}
-          iconSource={iconSources.call}
+          iconName="call"
           style={{ marginRight: 16 }}
         />
         <IconText
           text={information.email}
-          iconSource={iconSources.atSymbol}
+          iconName="atSymbol"
           style={{ marginRight: 16 }}
         />
         <IconText
           text={information.website}
-          iconSource={iconSources.link}
+          iconName="link"
           style={{ marginRight: 16 }}
         />
-        <IconText
-          text={information.location}
-          iconSource={iconSources.location}
-        />
+        <IconText text={information.location} iconName="location" />
       </InfoContainer>
     </Container>
   )

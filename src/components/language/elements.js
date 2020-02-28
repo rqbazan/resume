@@ -10,7 +10,7 @@ export const Name = styled.Text`
   font-size: 10px;
 `
 
-export const Score = styled.Text`
+export const Label = styled.Text`
   font-family: OpenSans;
   font-size: 8px;
   color: ${props => props.theme.colors.text};

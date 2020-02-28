@@ -2,7 +2,6 @@ import 'normalize.css'
 import React from 'react'
 import { PDFViewer, Document, View, Link } from '@react-pdf/renderer'
 import { ThemeProvider } from '@react-pdf/styled-components'
-import iconSources from '../icon-sources'
 import theme from '../theme'
 import {
   Heading,
@@ -162,33 +161,29 @@ export default function App() {
                 <Section title="Idiomas">
                   <Language
                     name="Español"
-                    score="Nativo"
+                    scoreLabel="Nativo"
+                    score={5}
                     style={{ marginBottom: 12 }}
-                    scoreSource={iconSources.scoreNative}
                   />
-                  <Language
-                    name="Inglés"
-                    score="Intermedio"
-                    scoreSource={iconSources.scoreIntermediate}
-                  />
+                  <Language name="Inglés" scoreLabel="Intermedio" score={3} />
                 </Section>
                 <Section title="Habilidades">
                   <Insight
                     style={{ marginBottom: 12 }}
                     title="Autodidacta"
                     description="Gracias a Internet: MOOCs, Youtube, Medium, Github, etc."
-                    iconSource={iconSources.autodidact}
+                    iconName="search"
                   />
                   <Insight
                     style={{ marginBottom: 12 }}
                     title="Creativo"
                     description="Inteligencia para soluciones sostenibles."
-                    iconSource={iconSources.creative}
+                    iconName="puzzle"
                   />
                   <Insight
                     title="Cooperativo"
                     description="Trabajo en equipo, con respeto y pasión por el éxito"
-                    iconSource={iconSources.cooperative}
+                    iconName="cog"
                   />
                 </Section>
                 <Section title="Internet">

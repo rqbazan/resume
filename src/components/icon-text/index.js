@@ -1,10 +1,11 @@
 import React from 'react'
-import { Container, Text, Image } from './elements'
+import Icon from '../icon'
+import { Container, Text } from './elements'
 
-export default function IconText({ style, text, iconSource }) {
+export default function IconText({ style, text, iconName }) {
   return (
     <Container style={style}>
-      <Image source={iconSource} />
+      <Icon size={10} name={iconName} />
       <Text>{text}</Text>
     </Container>
   )

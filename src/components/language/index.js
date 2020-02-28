@@ -7,7 +7,7 @@ export default function Language({ style, name, scoreLabel, score }) {
     <Container style={style}>
       <Name>{name}</Name>
       <Label>{scoreLabel}</Label>
-      <Score rank={score} />
+      <Score id="language" rank={score} />
     </Container>
   )
 }

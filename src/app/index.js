@@ -21,7 +21,11 @@ export default function App() {
   return (
     <PDFViewer className="pdf" frameBorder="0">
       <ThemeProvider theme={theme}>
-        <Document>
+        <Document
+          title="Ricardo Q. Bazan - Software Developer"
+          author="Ricardo Alexis Quiroz Bazan"
+          keywords="software,developer,javascript,nodejs"
+        >
           <Page size="A4">
             <Heading
               title="Ricardo Q. Bazan"

@@ -17,19 +17,28 @@ import {
 import { Page, Row, Column } from './elements'
 import './styles.css'
 
+const leftColumnStyle = {
+  marginRight: 16,
+  width: '55%'
+}
+
+const rightColumnStyle = {
+  width: '40%'
+}
+
 export default function App() {
   return (
     <PDFViewer className="pdf" frameBorder="0">
       <ThemeProvider theme={theme}>
         <Document
-          title="Ricardo Q. Bazan - Software Developer"
+          title="Ricardo Q. Bazan - Software Engineer"
           author="Ricardo Alexis Quiroz Bazan"
           keywords="software,developer,javascript,nodejs"
         >
           <Page size="A4">
             <Heading
               title="Ricardo Q. Bazan"
-              subtitle="Software Developer"
+              subtitle="Software Engineer"
               information={{
                 phone: '+51-986006178',
                 email: 'raquirozbazan@gmail.com',
@@ -38,8 +47,22 @@ export default function App() {
               }}
             />
             <Row>
-              <Column style={{ marginRight: 16, width: '55%' }}>
+              <Column style={leftColumnStyle}>
                 <Section title="Experiencia Laboral">
+                  <WorkPost
+                    style={{ marginBottom: 8 }}
+                    title="Backend NodeJS Engineer"
+                    companyName="VISA - VendeMás"
+                    location="Lima - Perú"
+                    period="03/2020 - Actualidad"
+                    description="Empresa del grupo VISA. Brinda tecnología para que los medianos y pequeños comercios puedan realizar sus ventas con todas las tarjetas"
+                  >
+                    <ListItem>
+                      Desarrollo integraciones entre sistemas utilizando
+                      arquitecturas de microservicios. Apache Kafka y RabbitMQ
+                      como principales tecnologias.
+                    </ListItem>
+                  </WorkPost>
                   <WorkPost
                     style={{ marginBottom: 8 }}
                     title="Software Consultant"
@@ -48,38 +71,19 @@ export default function App() {
                     period="09/2019 - Actualidad"
                   >
                     <ListItem>
-                      Contruí la plataforma B2B denominada{' '}
-                      <Link src="https://www.linkedin.com/company/wbn-inc/">
-                        Worldwide Business Network
-                      </Link>
-                      , optando el rol de Frontend Engineer para el modulo de
-                      perfiles.
+                      Desarrollo soluciones web y mobile utilizando
+                      principalmente NodeJS como ecosistema. #React y #GraphQL
+                      entusiasta.
                     </ListItem>
                     <ListItem>
-                      Brindo consultoria para empresas, acerca de practicas
-                      modernas de desarrollo de software, en temas que van desde
-                      el prototipado hasta el despliegue continuo de una
-                      aplicación web.
+                      Brindo consultoria acerca de practicas modernas de
+                      desarrollo de software, en temas que van desde el
+                      prototipado hasta el despliegue continuo de una
+                      aplicación.
                     </ListItem>
                     <ListItem>
-                      Dicto Workshops para empresas, acerca de desarrollo de
-                      software como FullStack NodeJS Developer, con el objetivo
-                      de motivar la adopción del stack tecnológico propuesto.
-                    </ListItem>
-                    <ListItem>
-                      Desarrollo la aplicación móvil de toma de pedidos
-                      denominada Taker para{' '}
-                      <Link src="https://sumerius.pe/">Sumerius</Link>,
-                      utilizando React Native y PouchDB como principales
-                      tecnologías de desarrollo.
-                    </ListItem>
-                    <ListItem>
-                      Desarrollo constantemente proyectos Open Source (OSS) con
-                      la intencion de aprender nuevas tecnologias y validar mis
-                      conocimientos. Todos estos visibles:{' '}
-                      <Link src="https://sxntixgo.codes/work">
-                        https://sxntixgo.codes/work
-                      </Link>
+                      Dicto workshops y charlas acerca de desarrollo de software
+                      como FullStack NodeJS Developer.
                     </ListItem>
                   </WorkPost>
                   <WorkPost
@@ -139,7 +143,7 @@ export default function App() {
                   </WorkPost>
                 </Section>
               </Column>
-              <Column style={{ width: '40%' }}>
+              <Column style={rightColumnStyle}>
                 <Section title="Resumen">
                   <Resume>
                     Ing. de Sistemas Computacionales, Autoprogramado seguidor de
@@ -211,7 +215,7 @@ export default function App() {
           </Page>
           <Page size="A4">
             <Row>
-              <Column style={{ marginRight: 16, width: '55%' }}>
+              <Column style={leftColumnStyle}>
                 <Section title="Últimos Proyectos">
                   <WorkPost
                     style={{ marginBottom: 8 }}
@@ -272,7 +276,7 @@ export default function App() {
                       operaciones de integración (Inspirado en parabola.io).
                     </ListItem>
                     <ListItem>
-                      Tenia la responsabilidad de ejecutar CRON jobs para la
+                      Tenia la responsabilidad de ejecutar cron jobs para la
                       sincronización de catálogos de productos.
                     </ListItem>
                   </WorkPost>
@@ -284,7 +288,7 @@ export default function App() {
                   />
                 </Section>
               </Column>
-              <Column style={{ width: '40%' }}>
+              <Column style={rightColumnStyle}>
                 <Section title="Tecnologías">
                   <TechGroup
                     style={{ marginBottom: 8 }}
@@ -313,8 +317,9 @@ export default function App() {
                       'MySQL',
                       'Postgres',
                       'Redis',
-                      'Docker Compose',
-                      'BullJS'
+                      'Docker',
+                      'RabbitMQ',
+                      'Kafka'
                     ]}
                   />
                   <TechGroup

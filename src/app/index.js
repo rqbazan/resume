@@ -43,7 +43,7 @@ export default function App() {
                 phone: '+51-986006178',
                 email: 'raquirozbazan@gmail.com',
                 website: 'https://sxntixgo.codes',
-                location: 'Trujillo - Perú'
+                location: 'Lima - Perú'
               }}
             />
             <Row>
@@ -67,7 +67,7 @@ export default function App() {
                     style={{ marginBottom: 8 }}
                     title="Software Consultant"
                     companyName="Independiente"
-                    location="Trujillo - Perú"
+                    location="Perú"
                     period="09/2019 - Actualidad"
                   >
                     <ListItem>

@@ -1,6 +1,13 @@
+import 'normalize.css'
+import './styles.css'
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { PDFViewer } from '@react-pdf/renderer'
 import App from './app'
-import './register-fonts'
 
-ReactDOM.render(<App />, document.getElementById('root'))
+ReactDOM.render(
+  <PDFViewer className="pdf" frameBorder="0">
+    <App />
+  </PDFViewer>,
+  document.getElementById('root')
+)

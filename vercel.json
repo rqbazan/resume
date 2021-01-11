@@ -1,7 +1,13 @@
 {
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/api"
+    }
+  ],
   "functions": {
-    "src/pages/api/index.js": {
-      "includeFiles": "src/app/assets/**"
+    "api/index.js": {
+      "includeFiles": "src/assets/**"
     }
   }
 }

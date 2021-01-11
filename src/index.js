@@ -25,7 +25,7 @@ const rightColumnStyle = {
   width: '40%'
 }
 
-export default function App() {
+export function App() {
   return (
     <ThemeProvider theme={theme}>
       <Document

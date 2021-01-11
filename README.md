@@ -1,6 +1,9 @@
 # My Resume with React PDF 📑
 
-I've used [Enhancv](https://enhancv.com) to build my resumes 🥰 ([see my enhancv doc](./docs/by-enhancv.pdf)), it's an awesome tool, really easy to use. But, in order to save some money 💸, I decided to build my own resume. 💯
+I've used [Enhancv](https://enhancv.com) to build my resumes 🥰
+([see my enhancv doc](https://github.com/rqbazan/my-resume-with-react-pdf/blob/1532b26f7756d16151b7c19a051ddb8d614474ba/docs/by-enhancv.pdf)),
+it's an awesome tool, really easy to use. But, in order to save some money 💸, I
+decided to build my own resume. 💯
 
 ### Objetives
 

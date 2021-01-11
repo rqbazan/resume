@@ -1,7 +1,7 @@
 {
   "functions": {
     "src/pages/api/index.js": {
-      "includeFiles": "fonts/**"
+      "includeFiles": "src/app/assets/**"
     }
   }
 }

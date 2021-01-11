@@ -22,17 +22,12 @@
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
-    "husky": "^4.2.3",
-    "lint-staged": "^10.5.3"
+    "husky": "^4.2.3"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
-  },
-  "lint-staged": {
-    "*.{js}": "eslint --fix"
   },
   "commitlint": {
     "extends": [

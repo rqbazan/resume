@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "echo use \"vercel dev\" instead",
-    "build": "echo no need it, lambda fn rocks"
+    "build": "mkdir public"
   },
   "dependencies": {
     "@react-pdf/renderer": "^1.6.8",

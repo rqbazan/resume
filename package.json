@@ -1,11 +1,7 @@
 {
   "name": "my-resume-with-react-pdf",
   "version": "0.0.0-semantically-released",
-  "author": {
-    "name": "Ricardo Q. Bazan",
-    "email": "raquirozbazan@gmail.com",
-    "url": "https://sxntixgo.codes"
-  },
+  "author": "Ricardo Q. Bazan <raquirozbazan@gmail.com>",
   "license": "MIT",
   "scripts": {
     "dev": "next dev",

@@ -4,16 +4,13 @@
   "author": "Ricardo Q. Bazan <raquirozbazan@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "next dev",
-    "start": "next start",
-    "build": "next build"
+    "build": "yarn esbuild ./app --bundle --platform=node --target=node12 --outdir=lib --loader:.js=jsx --loader:.ttf=dataurl"
   },
   "dependencies": {
-    "@react-pdf/renderer": "^1.6.8",
+    "@react-pdf/renderer": "^1.6.12",
     "@react-pdf/styled-components": "^1.4.0",
-    "next": "^10.0.5",
-    "react": "16.12.0",
-    "react-dom": "16.12.0"
+    "esbuild": "^0.8.31",
+    "react": "16.12.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",

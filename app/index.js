@@ -1,5 +1,5 @@
 import React from 'react'
-import { Document, View, Link } from '@react-pdf/renderer'
+import { Document, View, Link, renderToStream } from '@react-pdf/renderer'
 import { ThemeProvider } from '@react-pdf/styled-components'
 import theme from './theme'
 import {
@@ -376,3 +376,5 @@ export function App() {
     </ThemeProvider>
   )
 }
+
+export { renderToStream }

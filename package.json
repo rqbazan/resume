@@ -4,13 +4,16 @@
   "author": "Ricardo Q. Bazan <raquirozbazan@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "echo use \"vercel dev\" instead",
-    "build": "rm -rf public && mkdir public && touch public/index.html"
+    "dev": "next dev",
+    "start": "next start",
+    "build": "next build"
   },
   "dependencies": {
     "@react-pdf/renderer": "^1.6.8",
     "@react-pdf/styled-components": "^1.4.0",
-    "react": "16.12.0"
+    "next": "^10.0.5",
+    "react": "16.12.0",
+    "react-dom": "16.12.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",

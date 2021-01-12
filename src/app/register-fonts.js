@@ -1,8 +1,11 @@
 import path from 'path'
 import { Font } from '@react-pdf/renderer'
+import getConfig from 'next/config'
+
+const { serverRuntimeConfig } = getConfig()
 
 function src(filename) {
-  return path.join(__dirname, 'assets', 'fonts', filename)
+  return path.join(serverRuntimeConfig.PROJECT_ROOT, 'public/fonts', filename)
 }
 
 Font.register({

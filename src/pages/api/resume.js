@@ -1,6 +1,6 @@
 import React from 'react'
 import { renderToStream } from '@react-pdf/renderer'
-import { App } from '../src'
+import { App } from '../../app'
 
 export default async (req, res) => {
   const stream = await renderToStream(<App />)

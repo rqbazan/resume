@@ -9,12 +9,12 @@
   "dependencies": {
     "@react-pdf/renderer": "^1.6.12",
     "@react-pdf/styled-components": "^1.4.0",
-    "esbuild": "^0.8.31",
     "react": "16.12.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
+    "esbuild": "^0.8.31",
     "husky": "^4.2.3"
   },
   "husky": {

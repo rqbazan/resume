@@ -1,5 +1,5 @@
 import React from 'react'
-import { App, renderToStream } from '../lib'
+import { App, renderToStream } from './lib'
 
 export default async (req, res) => {
   const stream = await renderToStream(React.createElement(App))

@@ -1,7 +1,7 @@
 {
   "functions": {
     "api/resume.js": {
-      "includeFiles": "_files/**"
+      "includeFiles": "lib/**"
     }
   }
 }

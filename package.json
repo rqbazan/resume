@@ -4,7 +4,8 @@
   "author": "Ricardo Q. Bazan <raquirozbazan@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "yarn esbuild --define:process.env.NODE_ENV=\\\"production\\\" ./app --bundle --minify --platform=node --target=node12 --outdir=api/_lib --loader:.js=jsx --loader:.ttf=dataurl"
+    "vercel-build": "yarn esbuild --define:process.env.NODE_ENV=\\\"production\\\" ./app --bundle --minify --platform=node --target=node12 --outdir=api/_lib --loader:.js=jsx --loader:.ttf=dataurl",
+    "build": "yarn vercel-build"
   },
   "dependencies": {
     "@react-pdf/renderer": "^1.6.12",

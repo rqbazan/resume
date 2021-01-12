@@ -5,12 +5,13 @@ import getConfig from 'next/config'
 const { serverRuntimeConfig } = getConfig()
 
 function src(filename) {
-  return path.join(
-    serverRuntimeConfig.PROJECT_ROOT,
-    'public',
-    'fonts',
-    filename
-  )
+  const root = serverRuntimeConfig.PROJECT_ROOT
+
+  if (process.env.NODE_ENV === 'production') {
+    return path.join(root, 'fonts', filename)
+  }
+
+  return path.join(root, 'public', 'fonts', filename)
 }
 
 Font.register({

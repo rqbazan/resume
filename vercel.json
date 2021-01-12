@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "api/resume.js": {
+      "includeFiles": "_lib.js"
+    }
+  }
+}

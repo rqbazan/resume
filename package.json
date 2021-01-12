@@ -4,7 +4,7 @@
   "author": "Ricardo Q. Bazan <raquirozbazan@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "yarn esbuild ./app --bundle --platform=node --target=node12 --outdir=lib --loader:.js=jsx --loader:.ttf=dataurl"
+    "build": "yarn esbuild ./app --bundle --minify --platform=node --target=node12 --outfile=api/_lib.js --loader:.js=jsx --loader:.ttf=dataurl"
   },
   "dependencies": {
     "@react-pdf/renderer": "^1.6.12",

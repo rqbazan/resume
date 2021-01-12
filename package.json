@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "vercel-build": "yarn esbuild --define:process.env.NODE_ENV=\\\"production\\\" ./app --bundle --minify --platform=node --target=node12 --outdir=api/_lib --loader:.js=jsx --loader:.ttf=dataurl",
-    "build": "yarn vercel-build"
+    "test": "yarn vercel-build && node ./scripts/test.js"
   },
   "dependencies": {
     "@react-pdf/renderer": "^1.6.12",
@@ -15,6 +15,7 @@
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
+    "@vercel/nft": "^0.9.5",
     "esbuild": "^0.8.31",
     "husky": "^4.2.3"
   },

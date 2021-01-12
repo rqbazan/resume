@@ -1,7 +1,0 @@
-{
-  "functions": {
-    "api/resume.js": {
-      "excludeFiles": "api/_lib/index.js"
-    }
-  }
-}

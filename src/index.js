@@ -1,5 +1,5 @@
 import React from 'react'
-import { Document, View, Link } from '@react-pdf/renderer'
+import { Document, View, Link, renderToStream } from '@react-pdf/renderer'
 import { ThemeProvider } from '@react-pdf/styled-components'
 import theme from './theme'
 import {
@@ -25,7 +25,7 @@ const rightColumnStyle = {
   width: '40%'
 }
 
-export default function App() {
+export function App() {
   return (
     <ThemeProvider theme={theme}>
       <Document
@@ -376,3 +376,5 @@ export default function App() {
     </ThemeProvider>
   )
 }
+
+export { renderToStream }

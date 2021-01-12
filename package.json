@@ -1,38 +1,27 @@
 {
   "name": "my-resume-with-react-pdf",
   "version": "0.0.0-semantically-released",
-  "author": {
-    "name": "Ricardo Q. Bazan",
-    "email": "raquirozbazan@gmail.com",
-    "url": "https://sxntixgo.codes"
-  },
+  "author": "Ricardo Q. Bazan <raquirozbazan@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "next dev",
-    "start": "next start",
-    "build": "next build"
+    "vercel-build": "yarn esbuild --define:process.env.NODE_ENV=\\\"production\\\" ./src --bundle --minify --platform=node --target=node12 --outdir=api/_lib --loader:.js=jsx --loader:.ttf=dataurl"
   },
   "dependencies": {
-    "@react-pdf/renderer": "^1.6.8",
+    "@react-pdf/renderer": "^1.6.12",
     "@react-pdf/styled-components": "^1.4.0",
-    "next": "^10.0.5",
-    "react": "16.12.0",
-    "react-dom": "16.12.0"
+    "react": "16.12.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
-    "husky": "^4.2.3",
-    "lint-staged": "^10.5.3"
+    "@vercel/nft": "^0.9.5",
+    "esbuild": "^0.8.31",
+    "husky": "^4.2.3"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
-  },
-  "lint-staged": {
-    "*.{js}": "eslint --fix"
   },
   "commitlint": {
     "extends": [

@@ -377,4 +377,4 @@ export function App() {
   )
 }
 
-export { renderToStream }
+export const renderAppToStream = () => renderToStream(<App />)

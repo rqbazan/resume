@@ -4,8 +4,8 @@
   "author": "Ricardo Q. Bazan <raquirozbazan@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "snowpack dev",
-    "vercel-build": "esbuild --define:process.env.NODE_ENV=\\\"production\\\" ./src/server.jsx --bundle --minify --platform=node --target=node12 --outfile=api/_lib.js --loader:.ttf=dataurl",
+    "dev": "snowpack dev --reload",
+    "vercel-build": "esbuild --define:process.env.NODE_ENV=\\\"production\\\" ./src/index.server.jsx --bundle --minify --platform=node --target=node12 --outfile=api/_lib.js --loader:.ttf=dataurl",
     "postinstall": "patch-package"
   },
   "dependencies": {

@@ -1,7 +1,6 @@
 import React from 'react'
-import { Document, View, Link, renderToStream } from '@react-pdf/renderer'
+import { Document, View, Link } from '@react-pdf/renderer'
 import { ThemeProvider } from '@react-pdf/styled-components'
-import theme from './theme'
 import {
   Heading,
   Section,
@@ -12,9 +11,9 @@ import {
   Language,
   Insight,
   TechGroup
-} from './components'
+} from '../components'
+import theme from './theme'
 import { Page, Row, Column } from './elements'
-import './register-fonts'
 
 const leftColumnStyle = {
   marginRight: 16,
@@ -376,5 +375,3 @@ export function App() {
     </ThemeProvider>
   )
 }
-
-export const renderAppToStream = () => renderToStream(<App />)

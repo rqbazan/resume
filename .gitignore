@@ -2,3 +2,4 @@ node_modules
 .vscode
 .vercel
 api/_lib
+debug.log

@@ -10,8 +10,9 @@ import {
   EducationPost,
   Language,
   Insight,
-  TechGroup
-} from '../components'
+  TechGroup,
+  SocialMedia
+} from './components'
 import theme from './theme'
 import { Page, Row, Column } from './elements'
 
@@ -24,7 +25,7 @@ const rightColumnStyle = {
   width: '40%'
 }
 
-export function App() {
+export function App({ techProfile }) {
   return (
     <ThemeProvider theme={theme}>
       <Document
@@ -34,13 +35,13 @@ export function App() {
       >
         <Page size="A4">
           <Heading
-            title="Ricardo Q. Bazan"
+            title={techProfile.name}
             subtitle="Software Engineer"
             information={{
-              phone: '+51-986006178',
-              email: 'raquirozbazan@gmail.com',
-              website: 'https://sxntixgo.codes',
-              location: 'Lima - Perú'
+              phone: techProfile.phone,
+              email: techProfile.email,
+              website: techProfile.website,
+              location: techProfile.location
             }}
           />
           <Row>
@@ -191,18 +192,21 @@ export function App() {
               </Section>
               <Section title="Internet">
                 <View style={{ flexDirection: 'row' }}>
-                  <Link src="https://twitter.com/rqbazan" style={{ flex: 1 }}>
-                    <Insight title="Twitter" description="@rqbazan" />
-                  </Link>
-                  <Link src="https://github.com/rqbazan" style={{ flex: 1 }}>
-                    <Insight title="Github" description="@rqbazan" />
-                  </Link>
-                  <Link
-                    src="https://www.linkedin.com/in/rqbazan"
+                  <SocialMedia
+                    name="Twitter"
+                    profileUrl={techProfile.twitter}
                     style={{ flex: 1 }}
-                  >
-                    <Insight title="LinkedIn " description="@rqbazan" />
-                  </Link>
+                  />
+                  <SocialMedia
+                    name="Github"
+                    profileUrl={techProfile.github}
+                    style={{ flex: 1 }}
+                  />
+                  <SocialMedia
+                    name="LinkedIn"
+                    profileUrl={techProfile.linkedin}
+                    style={{ flex: 1 }}
+                  />
                 </View>
               </Section>
             </Column>

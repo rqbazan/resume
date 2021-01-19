@@ -2,4 +2,6 @@ node_modules
 .vscode
 .vercel
 debug.log
-api/_lib.js
+lib/app.js
+.env.local
+.env

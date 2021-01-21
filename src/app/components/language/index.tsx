@@ -1,9 +1,10 @@
 import React from 'react'
+import ReactPDF from '@react-pdf/renderer'
 import Score from '../score'
 import { Container, Name, Label } from './elements'
 
 export interface LanguageProps {
-  style?: unknown
+  style?: ReactPDF.Style
   name: string
   scoreLabel: string
   score: number

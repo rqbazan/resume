@@ -1,8 +1,9 @@
 import React from 'react'
+import ReactPDF from '@react-pdf/renderer'
 import { Container, Title, Separator } from './elements'
 
 export interface SectionProps {
-  style?: unknown
+  style?: ReactPDF.Style
   title: string
   spacing: number
 }

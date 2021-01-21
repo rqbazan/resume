@@ -1,8 +1,8 @@
 import React from 'react'
-import { Canvas } from '@react-pdf/renderer'
+import ReactPDF, { Canvas } from '@react-pdf/renderer'
 
 export interface IconProps {
-  style?: unknown
+  style?: ReactPDF.Style
   size?: number
   debug?: boolean
   color?: string

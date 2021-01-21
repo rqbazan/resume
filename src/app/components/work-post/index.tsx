@@ -1,10 +1,10 @@
 import React from 'react'
-import { View } from '@react-pdf/renderer'
+import ReactPDF, { View } from '@react-pdf/renderer'
 import IconText from '../icon-text'
 import { Title, MetaInfoContainer, WorkPlace, Description } from './elements'
 
 export interface WorkPostProps {
-  style?: unknown
+  style?: ReactPDF.Style
   children?: unknown
   title: string
   companyName: string
@@ -12,7 +12,13 @@ export interface WorkPostProps {
   period: string
   description: string
 }
-export default function WorkPost({
+
+type StaticProps = {
+  Title: typeof Title
+  WorkPlace: typeof WorkPlace
+}
+
+const WorkPost: React.FC<WorkPostProps> & StaticProps = ({
   style,
   title,
   companyName,
@@ -20,7 +26,7 @@ export default function WorkPost({
   period,
   description,
   children
-}: WorkPostProps) {
+}) => {
   return (
     <View style={style}>
       <Title>{title}</Title>
@@ -40,4 +46,7 @@ export default function WorkPost({
 }
 
 WorkPost.Title = Title
+
 WorkPost.WorkPlace = WorkPlace
+
+export default WorkPost

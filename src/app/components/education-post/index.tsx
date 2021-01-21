@@ -1,25 +1,24 @@
 import React from 'react'
-import { View } from '@react-pdf/renderer'
+import ReactPDF, { View } from '@react-pdf/renderer'
 import WorkPost from '../work-post'
 import IconText from '../icon-text'
 
 export interface EducationPostProps {
-  style?: unknown
-  children: unknown
+  style?: ReactPDF.Style
   title: string
   almaMater: string
   period: string
   location: string
 }
 
-export default function EducationPost({
+const EducationPost: React.FC<EducationPostProps> = ({
   style,
   title,
   almaMater,
   period,
   location,
   children
-}: EducationPostProps) {
+}) => {
   return (
     <View style={style}>
       <WorkPost.Title>{title}</WorkPost.Title>
@@ -36,3 +35,5 @@ export default function EducationPost({
     </View>
   )
 }
+
+export default EducationPost

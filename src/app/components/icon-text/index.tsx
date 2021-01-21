@@ -1,9 +1,10 @@
 import React from 'react'
+import ReactPDF from '@react-pdf/renderer'
 import Icon from '../icon'
 import { Container, Text } from './elements'
 
 export interface IconTextProps {
-  style?: unknown
+  style?: ReactPDF.Style
   text: string
   iconName: string
 }

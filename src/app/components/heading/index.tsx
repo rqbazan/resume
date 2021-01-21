@@ -1,10 +1,10 @@
 import React from 'react'
-import { Link } from '@react-pdf/renderer'
+import ReactPDF, { Link } from '@react-pdf/renderer'
 import IconText from '../icon-text'
 import { Container, Title, SubTitle, InfoContainer } from './elements'
 
 export interface HeadingProps {
-  style?: unknown
+  style?: ReactPDF.Style
   title: string
   subtitle: string
   information: {

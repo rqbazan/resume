@@ -1,7 +1,21 @@
 import styled from '@react-pdf/styled-components'
 
 export const Container = styled.View`
+  position: relative;
   padding-bottom: 16px;
+  flex-direction: row;
+`
+
+export const ImageContainer = styled.View`
+  width: ${props => props.size}px;
+  height: ${props => props.size}px;
+  position: absolute;
+  right: 0;
+  top: -20px;
+`
+
+export const Image = styled.Image`
+  border-radius: ${props => props.size / 2}px;
 `
 
 export const Title = styled.Text`

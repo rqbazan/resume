@@ -72,6 +72,7 @@ declare module '@app' {
     primaryColor: string
     aboutMe: string
     createdAt: string
+    avatarUrl: string
     langSkills: LangSkill[]
     strengths: Strength[]
     educationExperiences: EducationExperience[]

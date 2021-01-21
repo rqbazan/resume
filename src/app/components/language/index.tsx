@@ -2,7 +2,19 @@ import React from 'react'
 import Score from '../score'
 import { Container, Name, Label } from './elements'
 
-export default function Language({ style, name, scoreLabel, score }) {
+export interface LanguageProps {
+  style?: unknown
+  name: string
+  scoreLabel: string
+  score: number
+}
+
+export default function Language({
+  style,
+  name,
+  scoreLabel,
+  score
+}: LanguageProps) {
   return (
     <Container style={style}>
       <Name>{name}</Name>

@@ -4,7 +4,15 @@ import { withTheme } from '@react-pdf/styled-components'
 import RoundedIcon from '../rounded-icon'
 import { Container, Title, Description } from './elements'
 
-function Insight({ style, theme, title, description, iconName }) {
+export interface InsightProps {
+  style?: unknown
+  iconName?: string
+  theme: any
+  title: string
+  description: string
+}
+
+function Insight({ style, theme, title, description, iconName }: InsightProps) {
   return (
     <Container style={style}>
       {iconName && (

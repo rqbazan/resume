@@ -3,6 +3,15 @@ import { View } from '@react-pdf/renderer'
 import IconText from '../icon-text'
 import { Title, MetaInfoContainer, WorkPlace, Description } from './elements'
 
+export interface WorkPostProps {
+  style?: unknown
+  children?: unknown
+  title: string
+  companyName: string
+  location: string
+  period: string
+  description: string
+}
 export default function WorkPost({
   style,
   title,
@@ -11,7 +20,7 @@ export default function WorkPost({
   period,
   description,
   children
-}) {
+}: WorkPostProps) {
   return (
     <View style={style}>
       <Title>{title}</Title>

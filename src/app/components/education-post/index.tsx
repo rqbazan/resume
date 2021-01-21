@@ -3,6 +3,15 @@ import { View } from '@react-pdf/renderer'
 import WorkPost from '../work-post'
 import IconText from '../icon-text'
 
+export interface EducationPostProps {
+  style?: unknown
+  children: unknown
+  title: string
+  almaMater: string
+  period: string
+  location: string
+}
+
 export default function EducationPost({
   style,
   title,
@@ -10,7 +19,7 @@ export default function EducationPost({
   period,
   location,
   children
-}) {
+}: EducationPostProps) {
   return (
     <View style={style}>
       <WorkPost.Title>{title}</WorkPost.Title>

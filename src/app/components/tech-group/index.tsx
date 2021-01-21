@@ -2,7 +2,13 @@ import React from 'react'
 import { View } from '@react-pdf/renderer'
 import { TagsContainer, Title, Tag, TagContainer } from './elements'
 
-export default function TechGroup({ style, title, tags }) {
+export interface TechGroupProps {
+  style?: unknown
+  title: string
+  tags: string[]
+}
+
+export default function TechGroup({ style, title, tags }: TechGroupProps) {
   return (
     <View style={style}>
       <Title>{title}</Title>

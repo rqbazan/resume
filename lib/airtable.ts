@@ -1,10 +1,12 @@
-import Airtable from 'airtable'
+import airtable from 'airtable'
+import type { TechProfile, TechResume } from '@app'
 
-const db = Airtable.base(process.env.AIRTABLE_BASE)
-
-function $in(IDS) {
-  return `OR(${IDS.map(id => `RECORD_ID() = "${id}"`).join(',')})`
+type Relation = {
+  table: string
+  linkField: keyof TechResume
 }
+
+const db = airtable.base(process.env.AIRTABLE_BASE)
 
 function toJSON(record) {
   const fn = r => ({ id: r.id, ...r.fields })
@@ -16,12 +18,16 @@ function toJSON(record) {
   return fn(record)
 }
 
-export async function getTechProfile() {
+export async function getTechProfile(): Promise<TechProfile> {
   return db('Tech Profiles').find(process.env.AIRTABLE_RECORD_ID).then(toJSON)
 }
 
-export async function getTechResume({ id, lang }) {
+export async function getTechResume({ id, lang }): Promise<TechResume> {
   const table = 'Tech Resumes'
+
+  function $in(IDS: string[]): string {
+    return `OR(${IDS.map(id => `RECORD_ID() = "${id}"`).join(',')})`
+  }
 
   async function getTechResumeRecord() {
     if (id) {
@@ -47,7 +53,7 @@ export async function getTechResume({ id, lang }) {
     return null
   }
 
-  const relations = [
+  const relations: Relation[] = [
     {
       table: 'Lang Skills',
       linkField: 'langSkills'
@@ -74,14 +80,15 @@ export async function getTechResume({ id, lang }) {
     }
   ]
 
-  const promises = relations.map(({ table, linkField }) => {
-    return db(table)
+  const promises = relations.map(async ({ table, linkField }) => {
+    const data = await db(table)
       .select({
         filterByFormula: $in(record.get(linkField)),
         view: 'All'
       })
       .all()
-      .then(data => record.set(linkField, toJSON(data)))
+
+    record.set(linkField, toJSON(data))
   })
 
   await Promise.all(promises)

@@ -1,8 +1,15 @@
+import type { NowRequest, NowResponse } from '@vercel/node'
+import type { Lang, AppProps } from '@app'
 import { getTechProfile, getTechResume } from '../lib/airtable'
-import { renderAppToStream } from '../lib/app'
+import { renderAppToStream } from '../.lib/app'
 
-export default async (req, res) => {
-  const { id, lang = 'es' } = req.query
+type Query = {
+  id: string
+  lang: Lang
+}
+
+export default async (req: NowRequest, res: NowResponse) => {
+  const { id, lang = 'es' } = req.query as Query
 
   const [techProfile, techResume] = await Promise.all([
     getTechProfile(),
@@ -13,7 +20,7 @@ export default async (req, res) => {
     return res.redirect(techProfile.website)
   }
 
-  const data = {
+  const appProps: AppProps = {
     lang,
     techProfile,
     techResume
@@ -23,11 +30,11 @@ export default async (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*')
     res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS')
     res.setHeader('Cache-Control', 'max-age=60')
-    res.json(data)
+    res.json(appProps)
     return
   }
 
-  const stream = await renderAppToStream(data)
+  const stream = await renderAppToStream(appProps)
   res.setHeader('Content-Type', 'application/pdf')
   stream.pipe(res)
 }

@@ -1,5 +1,13 @@
 import React from 'react'
-import { Canvas } from '@react-pdf/renderer'
+import ReactPDF, { Canvas } from '@react-pdf/renderer'
+
+export interface IconProps {
+  style?: ReactPDF.Style
+  size?: number
+  debug?: boolean
+  color?: string
+  name: string
+}
 
 // prettier-ignore
 const iconPaths = {
@@ -22,9 +30,9 @@ export default function Icon({
   size = defaultSize,
   debug = false,
   color = 'black'
-}) {
+}: IconProps) {
   function drawIcon(doc) {
-    doc
+    return doc
       .scale(size / defaultSize)
       .path(iconPaths[name])
       .fillColor(color)

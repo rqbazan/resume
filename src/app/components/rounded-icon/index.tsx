@@ -1,9 +1,9 @@
 import React from 'react'
 import { withTheme } from '@react-pdf/styled-components'
-import Icon from '../icon'
+import Icon, { IconProps } from '../icon'
 import { Container } from './elements'
 
-function RoundedIcon({ style, ...props }) {
+function RoundedIcon({ style, ...props }: IconProps) {
   return (
     <Container style={style}>
       <Icon {...props} />

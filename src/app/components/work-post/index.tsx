@@ -1,17 +1,37 @@
 import React from 'react'
-import { View } from '@react-pdf/renderer'
+import ReactPDF, { View } from '@react-pdf/renderer'
+import { useStrings } from '../../hooks/use-strings'
+import { formatDateRange } from '../../utils/format-date-range'
 import IconText from '../icon-text'
 import { Title, MetaInfoContainer, WorkPlace, Description } from './elements'
 
-export default function WorkPost({
+export interface WorkPostProps {
+  style?: ReactPDF.Style
+  endAt?: string
+  startAt: string
+  title: string
+  companyName: string
+  location: string
+  description: string
+}
+
+type StaticProps = {
+  Title: typeof Title
+  WorkPlace: typeof WorkPlace
+}
+
+const WorkPost: React.FC<WorkPostProps> & StaticProps = ({
   style,
   title,
   companyName,
   location,
-  period,
+  startAt,
+  endAt,
   description,
   children
-}) {
+}) => {
+  const s = useStrings()
+
   return (
     <View style={style}>
       <Title>{title}</Title>
@@ -19,7 +39,9 @@ export default function WorkPost({
         {companyName && <WorkPlace>{companyName}</WorkPlace>}
         <IconText
           style={{ marginLeft: companyName ? 'auto' : 0, marginRight: 16 }}
-          text={period}
+          text={formatDateRange(startAt, endAt, {
+            fallbackEndAt: s['placeholder.endAt']
+          })}
           iconName="calendar"
         />
         <IconText text={location} iconName="location" />
@@ -31,4 +53,7 @@ export default function WorkPost({
 }
 
 WorkPost.Title = Title
+
 WorkPost.WorkPlace = WorkPlace
+
+export default WorkPost

@@ -687,6 +687,11 @@ concat-map@0.0.1:
   resolved "https://registry.npmjs.org/concat-map/-/concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"
   integrity sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=
 
+constate@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.npmjs.org/constate/-/constate-3.1.0.tgz#6a84da7f8051334a77a6a92860e4058b2eae96c1"
+  integrity sha512-a8hPXRJzcllP5D/9twMRI2VkAiZwgcY/fXyTHQqvv8EBZxzjEh6cAFlsHqnBQ7GtPWlNK11zD4pbIqO1jP0ReA==
+
 conventional-changelog-angular@^5.0.0:
   version "5.0.12"
   resolved "https://registry.npmjs.org/conventional-changelog-angular/-/conventional-changelog-angular-5.0.12.tgz#c979b8b921cbfe26402eb3da5bbfda02d865a2b9"

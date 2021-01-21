@@ -4,7 +4,7 @@ import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 import { PDFViewer } from '@react-pdf/renderer'
 import { Query } from './query'
-import { App } from '../app'
+import { AppProvider } from '../app'
 
 ReactDOM.render(
   <React.StrictMode>
@@ -12,7 +12,7 @@ ReactDOM.render(
       {(data: AppProps) => (
         // @ts-expect-error
         <PDFViewer className="pdf" frameBorder="0">
-          <App {...data} />
+          <AppProvider {...data} />
         </PDFViewer>
       )}
     </Query>

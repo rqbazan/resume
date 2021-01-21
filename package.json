@@ -4,19 +4,31 @@
   "author": "Ricardo Q. Bazan <raquirozbazan@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "vercel-build": "yarn esbuild --define:process.env.NODE_ENV=\\\"production\\\" ./src --bundle --minify --platform=node --target=node12 --outdir=api/_lib --loader:.js=jsx --loader:.ttf=dataurl"
+    "dev": "run-p dev:*",
+    "dev:web": "snowpack dev",
+    "dev:api": "yarn vercel-build && vercel dev",
+    "vercel-build": "esbuild ./src/server/index.jsx --bundle --minify --platform=node --target=node12 --outfile=lib/app.js --loader:.ttf=dataurl",
+    "postinstall": "patch-package"
   },
   "dependencies": {
     "@react-pdf/renderer": "^1.6.12",
     "@react-pdf/styled-components": "^1.4.0",
-    "react": "16.12.0"
+    "airtable": "^0.10.1",
+    "date-fns": "^2.16.1",
+    "react": "^17.0.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
-    "@vercel/nft": "^0.9.5",
+    "@snowpack/plugin-dotenv": "^2.0.5",
     "esbuild": "^0.8.31",
-    "husky": "^4.3.7"
+    "husky": "^4.3.7",
+    "npm-run-all": "^4.1.5",
+    "patch-package": "^6.2.2",
+    "postinstall-postinstall": "^2.1.0",
+    "react-dom": "^17.0.1",
+    "rollup-plugin-node-polyfills": "^0.2.1",
+    "snowpack": "^3.0.7"
   },
   "husky": {
     "hooks": {

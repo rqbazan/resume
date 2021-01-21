@@ -25,7 +25,7 @@ export default function WorkPost({
         <IconText text={location} iconName="location" />
       </MetaInfoContainer>
       {description && <Description>{description}</Description>}
-      <View style={{ marginTop: 10 }}>{children}</View>
+      {children && <View style={{ marginTop: 10 }}>{children}</View>}
     </View>
   )
 }

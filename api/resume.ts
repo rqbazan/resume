@@ -34,7 +34,7 @@ export default async (req: NowRequest, res: NowResponse) => {
     return
   }
 
-  const stream = await renderAppToStream(appProps)
-  res.setHeader('Content-Type', 'application/pdf')
-  stream.pipe(res)
+  // const stream = await renderAppToStream(appProps)
+  // res.setHeader('Content-Type', 'application/pdf')
+  // stream.pipe(res)
 }

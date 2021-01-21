@@ -24,7 +24,7 @@ const Section: React.FC<SectionProps> = ({
         const style = { marginBottom: mb }
 
         // @ts-expect-error
-        return React.cloneElement(child, { style })
+        return mb ? React.cloneElement(child, { style }) : child
       })}
     </Container>
   )

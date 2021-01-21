@@ -3,4 +3,6 @@ import * as React from 'react'
 import { renderToStream } from '@react-pdf/renderer'
 import { App } from '../app'
 
-export const renderAppToStream = props => renderToStream(<App {...props} />)
+export function renderAppToStream(props) {
+  return renderToStream(<App {...props} />)
+}

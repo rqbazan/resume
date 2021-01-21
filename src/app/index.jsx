@@ -1,6 +1,7 @@
 import React from 'react'
-import { Document, View, Link } from '@react-pdf/renderer'
+import { Document, View } from '@react-pdf/renderer'
 import { ThemeProvider } from '@react-pdf/styled-components'
+import * as dateFns from 'date-fns'
 import {
   Heading,
   Section,
@@ -13,8 +14,9 @@ import {
   TechGroup,
   SocialMedia
 } from './components'
-import theme from './theme'
+import { getTheme } from './theme'
 import { Page, Row, Column } from './elements'
+import strings from './strings.json'
 
 const leftColumnStyle = {
   marginRight: 16,
@@ -25,18 +27,34 @@ const rightColumnStyle = {
   width: '40%'
 }
 
-export function App({ techProfile }) {
+function isLast(arr, index) {
+  return index + 1 === arr.length
+}
+
+function formatDate(strDate) {
+  return dateFns.format(
+    dateFns.parse(strDate, 'yyyy-MM-dd', new Date()),
+    'LL/yyyy'
+  )
+}
+
+export function App({ techProfile, techResume, lang }) {
+  const s = {
+    ...strings.default,
+    ...strings[lang]
+  }
+
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={getTheme(techResume)}>
       <Document
-        title="Ricardo Q. Bazan - Software Engineer"
-        author="Ricardo Alexis Quiroz Bazan"
-        keywords="software,developer,javascript,nodejs"
+        title={`${techProfile.name} - ${techResume.title}`}
+        author={techProfile.name}
+        keywords={techResume.keywords}
       >
         <Page size="A4">
           <Heading
             title={techProfile.name}
-            subtitle="Software Engineer"
+            subtitle={techResume.title}
             information={{
               phone: techProfile.phone,
               email: techProfile.email,
@@ -46,151 +64,107 @@ export function App({ techProfile }) {
           />
           <Row>
             <Column style={leftColumnStyle}>
-              <Section title="Experiencia Laboral">
-                <WorkPost
-                  style={{ marginBottom: 8 }}
-                  title="Backend NodeJS Engineer"
-                  companyName="VISA - VendeMás"
-                  location="Lima - Perú"
-                  period="03/2020 - Actualidad"
-                  description="Empresa del grupo VISA. Brinda tecnología para que los medianos y pequeños comercios puedan realizar sus ventas con todas las tarjetas"
-                >
-                  <ListItem>
-                    Desarrollo integraciones entre sistemas utilizando
-                    arquitecturas de microservicios. Apache Kafka y RabbitMQ
-                    como principales tecnologias.
-                  </ListItem>
-                </WorkPost>
-                <WorkPost
-                  style={{ marginBottom: 8 }}
-                  title="Software Consultant"
-                  companyName="Independiente"
-                  location="Perú"
-                  period="09/2019 - Actualidad"
-                >
-                  <ListItem>
-                    Desarrollo soluciones web y mobile utilizando principalmente
-                    NodeJS como ecosistema. #React y #GraphQL entusiasta.
-                  </ListItem>
-                  <ListItem>
-                    Brindo consultoria acerca de practicas modernas de
-                    desarrollo de software, en temas que van desde el
-                    prototipado hasta el despliegue continuo de una aplicación.
-                  </ListItem>
-                  <ListItem>
-                    Dicto workshops y charlas acerca de desarrollo de software
-                    como FullStack NodeJS Developer.
-                  </ListItem>
-                </WorkPost>
-                <WorkPost
-                  style={{ marginBottom: 8 }}
-                  title="FullStack NodeJS Developer"
-                  companyName="Riqra"
-                  location="Lima - Perú"
-                  period="02/2018 - 08/2019"
-                  description="Riqra es una Startup peruana dedicada a digitalizar las ventas B2B/B2C de LATAM, mediante un software como servicio ofrecido como una solución tecnológica a proveedores y distribuidores."
-                >
-                  <ListItem>
-                    Construí la más reciente versión de la plataforma
-                    e-commerce, soportando características generales y
-                    especificas en cada una las instancias replicadas de
-                    nuestros clientes.
-                  </ListItem>
-                  <ListItem>
-                    Implementé y mantuve características dentro de nuestro
-                    GraphQL API. Así como también mejoras en el tratamiento de
-                    las transacciones web.
-                  </ListItem>
-                  <ListItem>
-                    Integré sistemas de terceros con nuestro API con el fin de
-                    mantener ambos entornos actualizados, implementando un
-                    servidor de integración basado en flujo de datos.
-                  </ListItem>
-                  <ListItem>
-                    Implementé la librería de componentes web para el sistema de
-                    diseño de la compañía, estando en constante evolución debido
-                    al uso de la misma en diferentes proyectos.
-                  </ListItem>
-                </WorkPost>
-                <WorkPost
-                  title="Android Developer"
-                  companyName="Wando"
-                  location="Trujillo - Perú"
-                  period="07/2016 - 06/2017"
-                  description="Wando es una Startup peruana dedicada a construir software y brindar consultorias de marca"
-                >
-                  <ListItem>
-                    Aprendí el uso de nuevas tecnologías con dispositivos Beacon
-                    y el protocolo NFC como miembro en demostraciones de
-                    innovación tecnológica.
-                  </ListItem>
-                  <ListItem>
-                    Usé el potencial y robustez de Firebase como
-                    infraestructura, además de utilizar los servicios de
-                    Fabric.io como Crashlytics y BetaTesting.
-                  </ListItem>
-                  <ListItem>
-                    Diseñé e implementé software como parte del proyecto
-                    corporativo llamado Delivery. Además, realicé mantenimiento
-                    de software a la aplicación Android de toma de pedidos,
-                    usando librerias como Dagger2, Retrofit, Requery and
-                    RxJava2.
-                  </ListItem>
-                </WorkPost>
+              <Section title={s['title.workExperience']}>
+                {techResume.workExperiences.map((workExperience, index) => {
+                  const mb = isLast(techResume.workExperiences, index) ? 0 : 8
+                  const startAt = formatDate(workExperience.startAt)
+                  const endAt = workExperience.endAt
+                    ? formatDate(workExperience.endAt)
+                    : s['placeholder.endAt']
+
+                  return (
+                    <WorkPost
+                      key={workExperience.id}
+                      style={{ marginBottom: mb }}
+                      title={workExperience.title}
+                      companyName={workExperience.company}
+                      location={workExperience.location}
+                      period={`${startAt} - ${endAt}`}
+                      description={workExperience.description}
+                    >
+                      {workExperience.lines
+                        .split('\n')
+                        .filter(Boolean)
+                        .map((line, i) => (
+                          <ListItem key={`${workExperience.id}-line-${i}`}>
+                            {line}
+                          </ListItem>
+                        ))}
+                    </WorkPost>
+                  )
+                })}
               </Section>
             </Column>
             <Column style={rightColumnStyle}>
-              <Section title="Resumen">
-                <Resume>
-                  Ing. de Sistemas Computacionales, Autoprogramado seguidor de
-                  "Clean Code". Ex-participante de concursos de programación
-                  competitiva. Uso NodeJS como ecosistema de desarrollo de
-                  software. #React, #TailwindCSS, #GraphQL, #TypeScript
-                </Resume>
+              <Section title={s['title.aboutMe']}>
+                <Resume>{techResume.aboutMe}</Resume>
               </Section>
-              <Section title="Educación">
-                <EducationPost
-                  title="Ingenieria de Sistemas Computacionales"
-                  almaMater="Universidad Privada del Norte"
-                  period="03/2013 - 12/2017"
-                  location="San Isidro, Trujillo, La Libertad, Perú"
-                >
-                  <ListItem>Especialidad en Ingeniería de Software</ListItem>
-                  <ListItem>
-                    Líder de la comunidad de programación ACM-ICPC (C y Python
-                    como lenguajes de competencia)
-                  </ListItem>
-                </EducationPost>
+              <Section title={s['title.education']}>
+                {techResume.educationExperiences.map(
+                  (educationExperience, index) => {
+                    const mb = isLast(techResume.educationExperiences, index)
+                      ? 0
+                      : 8
+                    const startAt = formatDate(educationExperience.startAt)
+                    const endAt = educationExperience.endAt
+                      ? formatDate(educationExperience.endAt)
+                      : s['placeholder.endAt']
+
+                    return (
+                      <EducationPost
+                        key={educationExperience.id}
+                        style={{ marginBottom: mb }}
+                        title={educationExperience.title}
+                        almaMater={educationExperience.almaMater}
+                        period={`${startAt} - ${endAt}`}
+                        location={educationExperience.location}
+                      >
+                        {educationExperience.lines
+                          .split('\n')
+                          .filter(Boolean)
+                          .map((line, i) => (
+                            <ListItem
+                              key={`${educationExperience.id}-line-${i}`}
+                            >
+                              {line}
+                            </ListItem>
+                          ))}
+                      </EducationPost>
+                    )
+                  }
+                )}
               </Section>
-              <Section title="Idiomas">
-                <Language
-                  name="Español"
-                  scoreLabel="Nativo"
-                  score={5}
-                  style={{ marginBottom: 12 }}
-                />
-                <Language name="Inglés" scoreLabel="Intermedio" score={3} />
+              <Section title={s['title.lang']}>
+                {techResume.langSkills.map((langSkill, index) => {
+                  const mb = isLast(techResume.langSkills, index) ? 0 : 12
+
+                  return (
+                    <Language
+                      key={langSkill.id}
+                      style={{ marginBottom: mb }}
+                      name={langSkill.name}
+                      scoreLabel={langSkill.scoreLabel}
+                      score={langSkill.score}
+                    />
+                  )
+                })}
               </Section>
-              <Section title="Habilidades">
-                <Insight
-                  style={{ marginBottom: 12 }}
-                  title="Autodidacta"
-                  description="Gracias a Internet: MOOCs, Youtube, Medium, Github, etc."
-                  iconName="search"
-                />
-                <Insight
-                  style={{ marginBottom: 12 }}
-                  title="Creativo"
-                  description="Inteligencia para soluciones sostenibles."
-                  iconName="puzzle"
-                />
-                <Insight
-                  title="Cooperativo"
-                  description="Trabajo en equipo, con respeto y pasión por el éxito"
-                  iconName="cog"
-                />
+              <Section title={s['title.strengths']}>
+                {techResume.strengths.map((strength, index) => {
+                  const mb = isLast(techResume.strengths, index) ? 0 : 12
+
+                  return (
+                    <Insight
+                      key={strength.id}
+                      style={{ marginBottom: mb }}
+                      title={strength.name}
+                      description={strength.description}
+                      iconName={strength.icon}
+                    />
+                  )
+                })}
               </Section>
-              <Section title="Internet">
+              <Section title={s['title.findMe']}>
                 <View style={{ flexDirection: 'row' }}>
                   <SocialMedia
                     name="Twitter"
@@ -215,162 +189,51 @@ export function App({ techProfile }) {
         <Page size="A4">
           <Row>
             <Column style={leftColumnStyle}>
-              <Section title="Últimos Proyectos">
-                <WorkPost
-                  style={{ marginBottom: 8 }}
-                  title="FullStack Development - Workshop"
-                  location="Trujillo - Perú"
-                  period="02/2020 - Actualidad"
-                  description="En este workshop enseño como construir una aplicación web desde el prototipado hasta el despliegue continuo. Usando como ecosistema de desarrollo NodeJS."
-                >
-                  <ListItem>
-                    Se construirá una aplicación clone de{' '}
-                    <Link src="https://www.getonbrd.com">GetOnBoard</Link> con
-                    las características más importantes del sistema. El proyecto
-                    tendra como entregables 3 aplicaciones: Una aplicación
-                    frontend user-facing, un GraphQL API y un dashboard
-                    administrativo.
-                  </ListItem>
-                </WorkPost>
-                <WorkPost
-                  style={{ marginBottom: 8 }}
-                  title="Taker - Mobile Application"
-                  location="Sumerius"
-                  period="01/2020 - Actualidad"
-                  description="Aplicación móvil para la toma de pedidos por parte de vendedores hacia la cartera de clientes que ellos manejen."
-                >
-                  <ListItem>
-                    React Native, React Navigation v5, PouchDB y React Native
-                    Paper, son algunas de las tecnologías con las que cuenta
-                    este proyecto.
-                  </ListItem>
-                </WorkPost>
-                <WorkPost
-                  style={{ marginBottom: 8 }}
-                  title="Sellers - Suite e-commerce"
-                  location="Riqra"
-                  period="02/2018 - 08/2019"
-                  description="Plataforma e-commerce B2B/B2C ofrecida como un SaaS a multiples compañías proveedoras y distribuidoras dentro de LATAM."
-                >
-                  <ListItem>
-                    Desarrollé el e-commerce y parte del panel administrativo
-                    usando tecnologías como NextJS, ApolloClient,
-                    StyledComponents, Cloudinary, CircleCI y Heroku.
-                  </ListItem>
-                  <ListItem>
-                    Implementé y mantuve características para el GraphQL API
-                    usando tecnologias como Sequelize, ApolloServer, JWT,
-                    BullJS, Docker, MySQL, Redis, Jest, CircleCI y Heroku.
-                  </ListItem>
-                </WorkPost>
-                <WorkPost
-                  style={{ marginBottom: 8 }}
-                  title="Hyperbola - Integration Server"
-                  location="Riqra"
-                  period="12/2018 - 08/2019"
-                  description="Servicio de integración entre el GraphQL API y sistemas de terceros con el fin de mantener ambos entornos actualizados"
-                >
-                  <ListItem>
-                    Basado en esquemas que definian el flujo de datos de las
-                    operaciones de integración (Inspirado en parabola.io).
-                  </ListItem>
-                  <ListItem>
-                    Tenia la responsabilidad de ejecutar cron jobs para la
-                    sincronización de catálogos de productos.
-                  </ListItem>
-                </WorkPost>
-                <WorkPost
-                  title="Truck - Design System"
-                  location="Riqra"
-                  period="06/2018 - 08/2019"
-                  description="Librería de componentes React para el sistema de diseño de la compañía, enfocada en CSS-in-JS. Usando Storybook como entorno de desarrollo."
-                />
+              <Section title={s['title.projects']}>
+                {techResume.workProjects.map((workProject, index) => {
+                  const mb = isLast(techResume.workProjects, index) ? 0 : 8
+                  const startAt = formatDate(workProject.startAt)
+                  const endAt = workProject.endAt
+                    ? formatDate(workProject.endAt)
+                    : s['placeholder.endAt']
+
+                  return (
+                    <WorkPost
+                      key={workProject.id}
+                      style={{ marginBottom: mb }}
+                      title={workProject.title}
+                      location={workProject.location}
+                      companyName={workProject.company}
+                      period={`${startAt} - ${endAt}`}
+                      description={workProject.description}
+                    >
+                      {workProject.lines
+                        ?.split('\n')
+                        .filter(Boolean)
+                        .map((line, i) => (
+                          <ListItem key={`${workProject.id}-line-${i}`}>
+                            {line}
+                          </ListItem>
+                        ))}
+                    </WorkPost>
+                  )
+                })}
               </Section>
             </Column>
             <Column style={rightColumnStyle}>
-              <Section title="Tecnologías">
-                <TechGroup
-                  style={{ marginBottom: 8 }}
-                  title="Frontend"
-                  tags={[
-                    'React',
-                    'React Native',
-                    'NextJS',
-                    'Gatsby',
-                    'TailwindCSS',
-                    'CSS-in-JS',
-                    'Apollo Client',
-                    'Storybook',
-                    'React Spring',
-                    'Webpack',
-                    'Rollup'
-                  ]}
-                />
-                <TechGroup
-                  style={{ marginBottom: 8 }}
-                  title="Backend"
-                  tags={[
-                    'NodeJS ',
-                    'Sequelize',
-                    'Apollo Server',
-                    'MySQL',
-                    'Postgres',
-                    'Redis',
-                    'Docker',
-                    'RabbitMQ',
-                    'Kafka'
-                  ]}
-                />
-                <TechGroup
-                  style={{ marginBottom: 8 }}
-                  title="Pruebas"
-                  tags={[
-                    'Jest ',
-                    'Ava',
-                    'ReactTestingLibrary',
-                    'Puppeteer',
-                    'Unit/Integration/E2E'
-                  ]}
-                />
-                <TechGroup
-                  style={{ marginBottom: 8 }}
-                  title="Lenguajes"
-                  tags={[
-                    'ES6 ',
-                    'Typescript',
-                    'Python',
-                    'Kotlin',
-                    'Java',
-                    'C#',
-                    'C',
-                    'C++'
-                  ]}
-                />
-                <TechGroup
-                  style={{ marginBottom: 8 }}
-                  title="Plataformas y Servicios"
-                  tags={[
-                    'CircleCI',
-                    'Github Actions',
-                    'Heroku',
-                    'App Center',
-                    'Cloudinary',
-                    'Algolia',
-                    'Forest Admin',
-                    'Postmark'
-                  ]}
-                />
-                <TechGroup
-                  title="Patrones y Arquitecturas"
-                  tags={[
-                    'MVC ',
-                    'MVP',
-                    'TDD',
-                    'DDD',
-                    'N-Layers',
-                    'Clean Architecture'
-                  ]}
-                />
+              <Section title={s['title.tech']}>
+                {techResume.techGroups.map((techGroup, index) => {
+                  const mb = isLast(techResume.techGroups, index) ? 0 : 8
+
+                  return (
+                    <TechGroup
+                      key={techGroup.id}
+                      style={{ marginBottom: mb }}
+                      title={techGroup.title}
+                      tags={techGroup.tags}
+                    />
+                  )
+                })}
               </Section>
             </Column>
           </Row>

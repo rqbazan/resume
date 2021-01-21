@@ -1,0 +1,25 @@
+{
+  "default": {
+    "title.findMe": "Internet"
+  },
+  "es": {
+    "title.tech": "Tecnologías",
+    "title.workExperience": "Experiencia Laboral",
+    "title.aboutMe": "Resumen",
+    "title.education": "Educación",
+    "title.lang": "Idiomas",
+    "title.strengths": "Habilidades",
+    "title.projects": "Últimos Proyectos",
+    "placeholder.endAt": "Actualidad"
+  },
+  "en": {
+    "title.tech": "Technologies",
+    "title.workExperience": "Work Experience",
+    "title.aboutMe": "Introduction",
+    "title.education": "Education",
+    "title.lang": "Languages",
+    "title.strengths": "Strengths",
+    "title.projects": "Last Projects",
+    "placeholder.endAt": "In Progress"
+  }
+}

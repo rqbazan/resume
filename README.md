@@ -9,5 +9,5 @@ decided to build my own resume. 💯
 
 - [x] Use [ReactPDF](https://react-pdf.org/) to build the document.
 - [x] Use my beautiful Enhancv theme as inspiration.
-- [ ] Support internationalization.
-- [ ] Support dynamic content from external service.
+- [x] Support dynamic content from external service.
+- [x] Support internationalization.

@@ -13,7 +13,8 @@ import {
   Language,
   Insight,
   TechGroup,
-  SocialMedia
+  SocialMedia,
+  Watermark
 } from './components'
 import { getTheme } from './theme'
 import { Page, Row, Column } from './elements'
@@ -37,6 +38,7 @@ export function App({ techProfile, techResume }: AppProps) {
       keywords={techResume.keywords}
     >
       <Page size="A4">
+        <Watermark />
         <Heading
           title={techProfile.name}
           subtitle={techResume.title}
@@ -140,6 +142,7 @@ export function App({ techProfile, techResume }: AppProps) {
         </Row>
       </Page>
       <Page size="A4">
+        <Watermark />
         <Row>
           <Column style={leftColumnStyle}>
             <Section title={s['title.projects']} spacing={8}>

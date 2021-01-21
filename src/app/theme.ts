@@ -1,14 +1,7 @@
+import type { Theme } from '@app'
+
 export interface ThemeOptions {
   primaryColor: string
-}
-
-export interface Theme {
-  colors: {
-    text: string
-    gray: string
-    ligthGray: string
-    primary: string
-  }
 }
 
 export function getTheme(options: ThemeOptions): Theme {

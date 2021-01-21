@@ -1,4 +1,5 @@
 import React from 'react'
+import type { Theme } from '@app'
 import ReactPDF, { View } from '@react-pdf/renderer'
 import { withTheme } from '@react-pdf/styled-components'
 import RoundedIcon from '../rounded-icon'
@@ -7,7 +8,7 @@ import { Container, Title, Description } from './elements'
 export interface InsightProps {
   style?: ReactPDF.Style
   iconName?: string
-  theme: any
+  theme: Theme
   title: string
   description: string
 }

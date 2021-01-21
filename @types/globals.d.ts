@@ -1,6 +1,15 @@
 declare module '@app' {
   export type Lang = 'es' | 'en'
 
+  export interface Theme {
+    colors: {
+      text: string
+      gray: string
+      ligthGray: string
+      primary: string
+    }
+  }
+
   export interface LangSkill {
     id: string
     name: string

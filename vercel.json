@@ -3,6 +3,10 @@
     {
       "source": "/",
       "destination": "/api/resume"
+    },
+    {
+      "source": "/s/:id",
+      "destination": "/api/resume?id=:id"
     }
   ]
 }

@@ -2,12 +2,16 @@ import { getTechProfile, getTechResume } from '../lib/airtable'
 import { renderAppToStream } from '../lib/app'
 
 export default async (req, res) => {
-  const { lang = 'es' } = req.query
+  const { id, lang = 'es' } = req.query
 
   const [techProfile, techResume] = await Promise.all([
     getTechProfile(),
-    getTechResume({ lang })
+    getTechResume({ id, lang })
   ])
+
+  if (!techResume) {
+    return res.redirect(techProfile.website)
+  }
 
   const data = {
     lang,

@@ -42,6 +42,7 @@ export function App({ techProfile, techResume }: AppProps) {
         <Heading
           title={techProfile.name}
           subtitle={techResume.title}
+          avatarUrl={techResume.avatarUrl}
           information={{
             phone: techProfile.phone,
             email: techProfile.email,

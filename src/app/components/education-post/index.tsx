@@ -1,9 +1,9 @@
-import React from 'react'
+import * as React from 'react'
 import ReactPDF, { View } from '@react-pdf/renderer'
 import { useStrings } from '../../hooks/use-strings'
 import { formatDateRange } from '../../utils/format-date-range'
-import WorkPost from '../work-post'
-import IconText from '../icon-text'
+import { WorkPost } from '../work-post'
+import { IconText } from '../icon-text'
 
 export interface EducationPostProps {
   style?: ReactPDF.Style
@@ -14,7 +14,7 @@ export interface EducationPostProps {
   location: string
 }
 
-const EducationPost: React.FC<EducationPostProps> = ({
+export const EducationPost: React.FC<EducationPostProps> = ({
   style,
   title,
   almaMater,
@@ -47,5 +47,3 @@ const EducationPost: React.FC<EducationPostProps> = ({
     </View>
   )
 }
-
-export default EducationPost

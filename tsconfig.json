@@ -8,7 +8,6 @@
     "rootDirs": ["src", "lib", "api"],
     "allowJs": false,
     "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true
+    "esModuleInterop": true
   }
 }

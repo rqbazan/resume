@@ -1,8 +1,8 @@
-import React from 'react'
+import * as React from 'react'
 import { View, Link } from '@react-pdf/renderer'
 import { Name, Username } from './elements'
 
-function SocialMedia({ name, profileUrl, ...props }) {
+export function SocialMedia({ name, profileUrl, ...props }) {
   const username = `@${profileUrl.split('/').splice(-1)}`
 
   return (
@@ -14,5 +14,3 @@ function SocialMedia({ name, profileUrl, ...props }) {
     </Link>
   )
 }
-
-export default SocialMedia

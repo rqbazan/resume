@@ -1,6 +1,6 @@
-import React from 'react'
+import * as React from 'react'
 import ReactPDF from '@react-pdf/renderer'
-import Icon from '../icon'
+import { Icon } from '../icon'
 import { Container, Text } from './elements'
 
 export interface IconTextProps {
@@ -9,7 +9,7 @@ export interface IconTextProps {
   iconName: string
 }
 
-export default function IconText({ style, text, iconName }: IconTextProps) {
+export function IconText({ style, text, iconName }: IconTextProps) {
   return (
     <Container style={style}>
       <Icon size={10} name={iconName} />

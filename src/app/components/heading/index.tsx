@@ -1,6 +1,6 @@
-import React from 'react'
+import * as React from 'react'
 import ReactPDF, { Link, View } from '@react-pdf/renderer'
-import IconText from '../icon-text'
+import { IconText } from '../icon-text'
 import {
   Container,
   Title,
@@ -24,7 +24,7 @@ export interface HeadingProps {
   }
 }
 
-export default function Heading({
+export function Heading({
   style,
   title,
   subtitle,

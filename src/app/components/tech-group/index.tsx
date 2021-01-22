@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import ReactPDF, { View } from '@react-pdf/renderer'
 import { TagsContainer, Title, Tag, TagContainer } from './elements'
 
@@ -8,7 +8,7 @@ export interface TechGroupProps {
   tags: string[]
 }
 
-export default function TechGroup({ style, title, tags }: TechGroupProps) {
+export function TechGroup({ style, title, tags }: TechGroupProps) {
   return (
     <View style={style}>
       <Title>{title}</Title>

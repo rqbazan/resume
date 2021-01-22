@@ -1,8 +1,8 @@
-import React from 'react'
+import * as React from 'react'
 import ReactPDF, { View } from '@react-pdf/renderer'
 import { useStrings } from '../../hooks/use-strings'
 import { formatDateRange } from '../../utils/format-date-range'
-import IconText from '../icon-text'
+import { IconText } from '../icon-text'
 import { Title, MetaInfoContainer, WorkPlace, Description } from './elements'
 
 export interface WorkPostProps {
@@ -20,7 +20,7 @@ type StaticProps = {
   WorkPlace: typeof WorkPlace
 }
 
-const WorkPost: React.FC<WorkPostProps> & StaticProps = ({
+export const WorkPost: React.FC<WorkPostProps> & StaticProps = ({
   style,
   title,
   companyName,
@@ -55,5 +55,3 @@ const WorkPost: React.FC<WorkPostProps> & StaticProps = ({
 WorkPost.Title = Title
 
 WorkPost.WorkPlace = WorkPlace
-
-export default WorkPost

@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import ReactPDF, { Canvas } from '@react-pdf/renderer'
 
 export interface IconProps {
@@ -24,7 +24,7 @@ const iconPaths = {
 
 const defaultSize = 24
 
-export default function Icon({
+export function Icon({
   style,
   name,
   size = defaultSize,

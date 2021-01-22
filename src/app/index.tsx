@@ -13,7 +13,7 @@ import { Language } from './components/language'
 import { Insight } from './components/insight'
 import { TechGroup } from './components/tech-group'
 import { SocialMedia } from './components/social-media'
-import { Watermark } from './components/Watermark'
+import { Watermark } from './components/watermark'
 import { Page, Row, Column } from './elements'
 import { getTheme } from './theme'
 

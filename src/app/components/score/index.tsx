@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import { View } from '@react-pdf/renderer'
 import { withTheme } from '@react-pdf/styled-components'
 import { Icon } from '../icon'

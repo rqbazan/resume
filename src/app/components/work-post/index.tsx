@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import ReactPDF, { View } from '@react-pdf/renderer'
 import { useStrings } from '../../hooks/use-strings'
 import { formatDateRange } from '../../utils/format-date-range'

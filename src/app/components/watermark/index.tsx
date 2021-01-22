@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import ReactPDF, { View, Canvas } from '@react-pdf/renderer'
 import { withTheme } from '@react-pdf/styled-components'
 import type { Theme } from '@app'

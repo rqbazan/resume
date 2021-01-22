@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import { View, Link } from '@react-pdf/renderer'
 import { Name, Username } from './elements'
 

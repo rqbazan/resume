@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import ReactPDF from '@react-pdf/renderer'
 import { Score } from '../score'
 import { Container, Name, Label } from './elements'

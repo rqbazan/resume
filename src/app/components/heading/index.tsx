@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import ReactPDF, { Link, View } from '@react-pdf/renderer'
 import { IconText } from '../icon-text'
 import {

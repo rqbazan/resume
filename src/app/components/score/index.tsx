@@ -1,9 +1,9 @@
 import React from 'react'
 import { View } from '@react-pdf/renderer'
 import { withTheme } from '@react-pdf/styled-components'
-import Icon from '../icon'
+import { Icon } from '../icon'
 
-function Score({ theme, id, rank }) {
+export const Score = withTheme(function Score({ theme, id, rank }) {
   const { colors } = theme
 
   return (
@@ -19,6 +19,4 @@ function Score({ theme, id, rank }) {
       ))}
     </View>
   )
-}
-
-export default withTheme(Score)
+})

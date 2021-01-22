@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactPDF from '@react-pdf/renderer'
-import Score from '../score'
+import { Score } from '../score'
 import { Container, Name, Label } from './elements'
 
 export interface LanguageProps {
@@ -10,12 +10,7 @@ export interface LanguageProps {
   score: number
 }
 
-export default function Language({
-  style,
-  name,
-  scoreLabel,
-  score
-}: LanguageProps) {
+export function Language({ style, name, scoreLabel, score }: LanguageProps) {
   return (
     <Container style={style}>
       <Name>{name}</Name>

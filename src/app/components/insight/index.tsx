@@ -2,7 +2,7 @@ import React from 'react'
 import type { Theme } from '@app'
 import ReactPDF, { View } from '@react-pdf/renderer'
 import { withTheme } from '@react-pdf/styled-components'
-import RoundedIcon from '../rounded-icon'
+import { RoundedIcon } from '../rounded-icon'
 import { Container, Title, Description } from './elements'
 
 export interface InsightProps {
@@ -13,7 +13,13 @@ export interface InsightProps {
   description: string
 }
 
-function Insight({ style, theme, title, description, iconName }: InsightProps) {
+export const Insight = withTheme(function Insight({
+  style,
+  theme,
+  title,
+  description,
+  iconName
+}: InsightProps) {
   return (
     <Container style={style}>
       {iconName && (
@@ -30,6 +36,4 @@ function Insight({ style, theme, title, description, iconName }: InsightProps) {
       </View>
     </Container>
   )
-}
-
-export default withTheme(Insight)
+})

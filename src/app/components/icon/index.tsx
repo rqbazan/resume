@@ -24,7 +24,7 @@ const iconPaths = {
 
 const defaultSize = 24
 
-export default function Icon({
+export function Icon({
   style,
   name,
   size = defaultSize,

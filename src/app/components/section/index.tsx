@@ -8,7 +8,7 @@ export interface SectionProps {
   spacing: number
 }
 
-const Section: React.FC<SectionProps> = ({
+export const Section: React.FC<SectionProps> = ({
   style,
   title,
   spacing,
@@ -30,5 +30,3 @@ const Section: React.FC<SectionProps> = ({
     </Container>
   )
 }
-
-export default Section

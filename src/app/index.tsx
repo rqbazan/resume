@@ -3,21 +3,19 @@ import type { AppProps } from '@app'
 import { Document, View } from '@react-pdf/renderer'
 import { ThemeProvider } from '@react-pdf/styled-components'
 import { StringsProvider, useStrings } from './hooks/use-strings'
-import {
-  Heading,
-  Section,
-  ListItem,
-  WorkPost,
-  Resume,
-  EducationPost,
-  Language,
-  Insight,
-  TechGroup,
-  SocialMedia,
-  Watermark
-} from './components'
-import { getTheme } from './theme'
+import { Heading } from './components/heading'
+import { Section } from './components/section'
+import { ListItem } from './components/list-item'
+import { WorkPost } from './components/work-post'
+import { Resume } from './components/resume'
+import { EducationPost } from './components/education-post'
+import { Language } from './components/language'
+import { Insight } from './components/insight'
+import { TechGroup } from './components/tech-group'
+import { SocialMedia } from './components/social-media'
+import { Watermark } from './components/Watermark'
 import { Page, Row, Column } from './elements'
+import { getTheme } from './theme'
 
 const leftColumnStyle = {
   marginRight: 16,

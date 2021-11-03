@@ -1,6 +1,8 @@
-import type { NowRequest, NowResponse } from '@vercel/node'
-import type { Lang, AppProps } from '@app'
-import { getTechProfile, getTechResume } from '../lib/airtable'
+import type { VercelRequest, VercelResponse } from '@vercel/node'
+import type { Lang } from '../src/types'
+import { getTechProfile, getTechResume } from '../src/lib/airtable'
+
+// @ts-expect-error
 import { renderAppToStream } from '../.lib/app'
 
 type Query = {
@@ -8,22 +10,22 @@ type Query = {
   lang: Lang
 }
 
-export default async (req: NowRequest, res: NowResponse) => {
+export default async (req: VercelRequest, res: VercelResponse) => {
   const { id, lang = 'es' } = req.query as Query
 
   const [techProfile, techResume] = await Promise.all([
     getTechProfile(),
-    getTechResume({ id, lang })
+    getTechResume({ id, lang }),
   ])
 
   if (!techResume) {
     return res.redirect(techProfile.website)
   }
 
-  const appProps: AppProps = {
+  const appProps = {
     lang,
     techProfile,
-    techResume
+    techResume,
   }
 
   if (process.env.NODE_ENV !== 'production') {

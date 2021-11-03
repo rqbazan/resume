@@ -1,7 +1,9 @@
 node_modules
-.vscode
+.DS_Store
+dist
+dist-ssr
+*.local
 .vercel
 .lib
-*.log
-.env.local
 .env
+!.env.example

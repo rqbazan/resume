@@ -1,32 +1,50 @@
-import * as React from 'react'
-import type { AppProps } from '@app'
-import { Document, View } from '@react-pdf/renderer'
-import { ThemeProvider } from '@react-pdf/styled-components'
-import { StringsProvider, useStrings } from './hooks/use-strings'
-import { Heading } from './components/heading'
-import { Section } from './components/section'
-import { ListItem } from './components/list-item'
-import { WorkPost } from './components/work-post'
-import { Resume } from './components/resume'
-import { EducationPost } from './components/education-post'
-import { Language } from './components/language'
-import { Insight } from './components/insight'
-import { TechGroup } from './components/tech-group'
-import { SocialMedia } from './components/social-media'
-import { Watermark } from './components/watermark'
-import { Page, Row, Column } from './elements'
-import { getTheme } from './theme'
+import type { Lang, TechProfile, TechResume } from '~/types'
+import { Document, View, StyleSheet, Page } from '~/react-pdf'
+import { ThemeProvider, StringsProvider, useStrings } from './hooks'
+import {
+  Heading,
+  Section,
+  ListItem,
+  WorkPost,
+  Resume,
+  EducationPost,
+  Language,
+  Insight,
+  TechGroup,
+  SocialMedia,
+  Watermark,
+} from './ui'
+import { createTheme } from './theme'
 
-const leftColumnStyle = {
-  marginRight: 16,
-  width: '55%'
+export interface AppDocumentProps {
+  techProfile: TechProfile
+  techResume: TechResume
 }
 
-const rightColumnStyle = {
-  width: '40%'
+export interface AppProps extends AppDocumentProps {
+  lang: Lang
 }
 
-export function App({ techProfile, techResume }: AppProps) {
+const styles = StyleSheet.create({
+  page: {
+    paddingVertical: 48,
+    paddingHorizontal: 50,
+  },
+  row: {
+    flexDirection: 'row',
+  },
+  leftColumn: {
+    flexGrow: 1,
+    marginRight: 16,
+    width: '55%',
+  },
+  rightColumn: {
+    flexGrow: 1,
+    width: '40%',
+  },
+})
+
+function AppDocument({ techProfile, techResume }: AppDocumentProps) {
   const s = useStrings()
 
   return (
@@ -35,7 +53,7 @@ export function App({ techProfile, techResume }: AppProps) {
       author={techProfile.name}
       keywords={techResume.keywords}
     >
-      <Page size="A4">
+      <Page size="A4" style={styles.page}>
         <Watermark />
         <Heading
           title={techProfile.name}
@@ -45,13 +63,13 @@ export function App({ techProfile, techResume }: AppProps) {
             phone: techProfile.phone,
             email: techProfile.email,
             website: techProfile.website,
-            location: techProfile.location
+            location: techProfile.location,
           }}
         />
-        <Row>
-          <Column style={leftColumnStyle}>
+        <View style={styles.row}>
+          <View style={styles.leftColumn}>
             <Section title={s['title.workExperience']} spacing={8}>
-              {techResume.workExperiences.map(workExperience => (
+              {techResume.workExperiences.map((workExperience) => (
                 <WorkPost
                   key={workExperience.id}
                   title={workExperience.title}
@@ -72,13 +90,13 @@ export function App({ techProfile, techResume }: AppProps) {
                 </WorkPost>
               ))}
             </Section>
-          </Column>
-          <Column style={rightColumnStyle}>
+          </View>
+          <View style={styles.rightColumn}>
             <Section title={s['title.aboutMe']} spacing={8}>
               <Resume>{techResume.aboutMe}</Resume>
             </Section>
             <Section title={s['title.education']} spacing={8}>
-              {techResume.educationExperiences.map(educationExperience => (
+              {techResume.educationExperiences.map((educationExperience) => (
                 <EducationPost
                   key={educationExperience.id}
                   title={educationExperience.title}
@@ -99,7 +117,7 @@ export function App({ techProfile, techResume }: AppProps) {
               ))}
             </Section>
             <Section title={s['title.lang']} spacing={12}>
-              {techResume.langSkills.map(langSkill => (
+              {techResume.langSkills.map((langSkill) => (
                 <Language
                   key={langSkill.id}
                   name={langSkill.name}
@@ -109,7 +127,7 @@ export function App({ techProfile, techResume }: AppProps) {
               ))}
             </Section>
             <Section title={s['title.strengths']} spacing={12}>
-              {techResume.strengths.map(strength => (
+              {techResume.strengths.map((strength) => (
                 <Insight
                   key={strength.id}
                   title={strength.name}
@@ -137,15 +155,15 @@ export function App({ techProfile, techResume }: AppProps) {
                 />
               </View>
             </Section>
-          </Column>
-        </Row>
+          </View>
+        </View>
       </Page>
-      <Page size="A4">
+      <Page size="A4" style={styles.page}>
         <Watermark />
-        <Row>
-          <Column style={leftColumnStyle}>
+        <View style={styles.row}>
+          <View style={styles.leftColumn}>
             <Section title={s['title.projects']} spacing={8}>
-              {techResume.workProjects.map(workProject => (
+              {techResume.workProjects.map((workProject) => (
                 <WorkPost
                   key={workProject.id}
                   title={workProject.title}
@@ -166,10 +184,10 @@ export function App({ techProfile, techResume }: AppProps) {
                 </WorkPost>
               ))}
             </Section>
-          </Column>
-          <Column style={rightColumnStyle}>
+          </View>
+          <View style={styles.rightColumn}>
             <Section title={s['title.tech']} spacing={8}>
-              {techResume.techGroups.map(techGroup => (
+              {techResume.techGroups.map((techGroup) => (
                 <TechGroup
                   key={techGroup.id}
                   title={techGroup.title}
@@ -177,18 +195,20 @@ export function App({ techProfile, techResume }: AppProps) {
                 />
               ))}
             </Section>
-          </Column>
-        </Row>
+          </View>
+        </View>
       </Page>
     </Document>
   )
 }
 
-export const AppProvider: React.FC<AppProps> = props => {
+export function App({ lang, techResume, techProfile }: AppProps) {
+  const theme = createTheme({ primaryColor: techResume.primaryColor })
+
   return (
-    <ThemeProvider theme={getTheme(props.techResume)}>
-      <StringsProvider lang={props.lang}>
-        <App {...props} />
+    <ThemeProvider theme={theme}>
+      <StringsProvider lang={lang}>
+        <AppDocument techResume={techResume} techProfile={techProfile} />
       </StringsProvider>
     </ThemeProvider>
   )

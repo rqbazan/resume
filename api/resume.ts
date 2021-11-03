@@ -2,8 +2,8 @@ import type { VercelRequest, VercelResponse } from '@vercel/node'
 import type { Lang } from '../src/types'
 import { getTechProfile, getTechResume } from '../src/lib/airtable'
 
-// @ts-expect-error
-import { renderAppToStream } from '../.lib/app'
+// @ts-ignore
+import { renderAppToStream } from '../.lib/server'
 
 type Query = {
   id: string

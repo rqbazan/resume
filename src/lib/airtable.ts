@@ -1,4 +1,4 @@
-import airtable, { Record, Records, FieldSet } from 'airtable'
+import airtable, { Record, FieldSet } from 'airtable'
 import type { Lang, TechProfile, TechResume } from '~/types'
 
 interface Relation {

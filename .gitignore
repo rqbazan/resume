@@ -7,3 +7,5 @@ dist-ssr
 .lib
 .env
 !.env.example
+yalc.lock
+.yalc

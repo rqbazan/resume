@@ -1,4 +1,5 @@
-import airtable, { Record, FieldSet } from 'airtable'
+import Airtable from 'airtable'
+import type { FieldSet, Record } from 'airtable'
 import type { Lang, TechProfile, TechResume } from '~/types'
 
 interface Relation {
@@ -11,7 +12,7 @@ interface GetTechResumeOptions {
   lang: Lang
 }
 
-const db = airtable.base(process.env.AIRTABLE_BASE!)
+const db = Airtable.base(process.env.AIRTABLE_BASE!)
 
 function toJSON<T extends FieldSet>(record: Record<T>) {
   return { id: record.id, ...record.fields }

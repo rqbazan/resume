@@ -25,13 +25,13 @@ export function SocialMedia({ name, profileUrl, ...props }: SocialMediaProps) {
   const username = `@${profileUrl.split('/').splice(-1)}`
 
   return (
-    <Link src={profileUrl} {...props}>
-      <View>
-        <Text style={styles.name}>{name}</Text>
+    <View {...props}>
+      <Text style={styles.name}>{name}</Text>
+      <Link src={profileUrl}>
         <Text style={[styles.username, { color: theme.colors.text }]}>
           {username}
         </Text>
-      </View>
-    </Link>
+      </Link>
+    </View>
   )
 }

@@ -46,6 +46,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     marginTop: 12,
   },
+  link: {
+    marginRight: 16,
+    textDecoration: 'none',
+  },
 })
 
 export function Heading({
@@ -66,13 +70,13 @@ export function Heading({
           {subtitle}
         </Text>
         <View style={styles.infoContainer}>
-          <Link src={`tel:${phone}`} style={{ marginRight: 16 }}>
+          <Link src={`tel:${phone}`} style={styles.link}>
             <IconText text={phone} iconName="call" />
           </Link>
-          <Link src={`mailto:${email}`} style={{ marginRight: 16 }}>
+          <Link src={`mailto:${email}`} style={styles.link}>
             <IconText text={email} iconName="atSymbol" />
           </Link>
-          <Link src={`mailto:${website}`} style={{ marginRight: 16 }}>
+          <Link src={website} style={styles.link}>
             <IconText text={website} iconName="link" />
           </Link>
           <IconText text={location} iconName="location" />

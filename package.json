@@ -5,15 +5,16 @@
   "scripts": {
     "dev:web": "vite",
     "build": "run-p build:*",
-    "vercel-build": "npm run build",
     "build:browser": "vite build",
     "build:server": "node ./scripts/bundle.js",
+    "vercel-build": "npm run build",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@react-pdf/renderer": "2.0.20",
     "airtable": "0.11.1",
     "date-fns": "2.25.0",
+    "encoding": "^0.1.13",
     "react": "17.0.0",
     "react-dom": "17.0.0"
   },

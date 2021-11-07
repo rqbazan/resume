@@ -4,9 +4,10 @@
   "license": "MIT",
   "scripts": {
     "dev:web": "vite",
+    "build": "run-p build:*",
+    "vercel-build": "yarn build:server",
     "build:browser": "vite build",
     "build:server": "node ./scripts/bundle.js",
-    "vercel-build": "yarn build:server",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

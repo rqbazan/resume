@@ -1,4 +1,4 @@
-import * as Airtable from 'airtable'
+import Airtable from 'airtable'
 import type { FieldSet, Record } from 'airtable'
 import type { Lang, TechProfile, TechResume } from '~/types'
 

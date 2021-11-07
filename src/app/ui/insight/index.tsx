@@ -1,10 +1,11 @@
 import { Text, View, Style, StyleSheet } from '~/react-pdf'
 import { RoundedIcon } from '../rounded-icon'
+import type { IconName } from '../icon'
 import { useTheme } from '~/app/hooks/use-theme'
 
 export interface InsightProps {
   style?: Style
-  iconName?: string
+  iconName?: IconName
   title: string
   description: string
 }

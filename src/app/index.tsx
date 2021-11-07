@@ -13,6 +13,7 @@ import {
   TechGroup,
   SocialMedia,
   Watermark,
+  IconName,
 } from './ui'
 import { createTheme } from './theme'
 
@@ -132,7 +133,7 @@ function AppDocument({ techProfile, techResume }: AppDocumentProps) {
                   key={strength.id}
                   title={strength.name}
                   description={strength.description}
-                  iconName={strength.icon}
+                  iconName={strength.icon as IconName}
                 />
               ))}
             </Section>

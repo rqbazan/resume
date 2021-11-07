@@ -5,6 +5,7 @@
   "scripts": {
     "dev:web": "vite",
     "build": "run-p build:*",
+    "vercel-build": "npm run build",
     "build:browser": "vite build",
     "build:server": "node ./scripts/bundle.js",
     "typecheck": "tsc --noEmit"

@@ -1,0 +1,248 @@
+{
+  "lang": "es",
+  "techProfile": {
+    "id": "rec9sOqORNMskTURz",
+    "website": "https://rcrd.space",
+    "seoBanner": "https://res.cloudinary.com/dpwoyjb1f/image/upload/v1610162961/me/social_banner.png",
+    "location": "Peru",
+    "twitter": "https://twitter.com/rqbazan",
+    "seoDescription": "Software developer mostly with NodeJS 💚 I love to write clean beautiful code even when it's unnecessary.",
+    "github": "https://github.com/rqbazan",
+    "phone": "+51 986006178",
+    "name": "Ricardo Q. Bazan",
+    "email": "raquirozbazan@gmail.com",
+    "freelanceRole": "Software Consultant",
+    "seoTitle": "Lead Frontend",
+    "interests": [
+      "problem solving",
+      "clean code ",
+      "web development",
+      "api architecture"
+    ],
+    "linkedin": "https://www.linkedin.com/in/rqbazan",
+    "nickname": "Santiago"
+  },
+  "techResume": {
+    "id": "reciF6HcyQmRarboa",
+    "langSkills": [
+      {
+        "id": "recDlHTucjncg9bJY",
+        "name": "Español",
+        "scoreLabel": "Nativo",
+        "score": 5
+      },
+      {
+        "id": "recT7wuUU8s10MYnB",
+        "name": "Inglés",
+        "scoreLabel": "Intermedio",
+        "score": 3
+      }
+    ],
+    "published": true,
+    "keywords": "software,developer,javascript,nodejs",
+    "title": "Frontend Lead",
+    "strengths": [
+      {
+        "id": "recQALs8oJiCeU5Ao",
+        "name": "Autodidacta",
+        "description": "Gracias a Internet: MOOCs, Youtube, Medium, Github, etc.",
+        "icon": "search"
+      },
+      {
+        "id": "recB8IEs7erJo6fvp",
+        "name": "Creativo",
+        "description": "Inteligencia para soluciones sostenibles.",
+        "icon": "puzzle"
+      },
+      {
+        "id": "recglvD1mIi2p5zrS",
+        "name": "Cooperativo",
+        "description": "Trabajo en equipo, con respeto y pasión por el éxito.",
+        "icon": "cog"
+      }
+    ],
+    "educationExperiences": [
+      {
+        "id": "rectmmwydUcEEocEM",
+        "title": "Ingenieria de Sistemas Computacionales",
+        "location": "San Isidro, Trujillo, La Libertad, Perú",
+        "lines": "Especialidad en Ingeniería de Software\nLíder de la comunidad de programación ACM-ICPC (C y Python como lenguajes de competencia)\n",
+        "endAt": "2017-12-31",
+        "startAt": "2013-03-01",
+        "almaMater": "Universidad Privada del Norte"
+      }
+    ],
+    "lang": "es",
+    "workExperiences": [
+      {
+        "id": "rece2e7zjaFeIhKMT",
+        "lines": "Mantengo las principales aplicaciones frontend de la empresa, liderando cambios estructurales en la arquitectura.\nDesarrollo integraciones con sistemas de pago nacionales e internacionales.\n\n\n",
+        "startAt": "2020-07-01",
+        "location": "Lima - Perú",
+        "company": "Riqra",
+        "description": "Riqra construye una solución e-commerce dedicada a digitalizar las ventas B2B de LATAM.",
+        "title": "Frontend Lead"
+      },
+      {
+        "id": "recFcXuJHFjlaMHGq",
+        "lines": "Desarrollo integraciones entre sistemas utilizando arquitecturas de microservicios. Apache Kafka y RabbitMQ como principales tecnologías.\n",
+        "startAt": "2020-03-01",
+        "location": "Lima - Perú",
+        "endAt": "2020-06-30",
+        "company": "VISA - VendeMás",
+        "description": "Empresa del grupo VISA. Brinda tecnología para que los medianos y pequeños comercios puedan realizar sus ventas con todas las tarjetas.",
+        "title": "Backend NodeJS Engineer"
+      },
+      {
+        "id": "recCMZfe9CdQ1pyJg",
+        "lines": "Desarrollo soluciones web y mobile utilizando principalmente NodeJS como ecosistema. #React y #GraphQL entusiasta.\nBrindo consultoria acerca de practicas modernas de desarrollo de software, en temas que van desde el prototipado hasta el despliegue continuo de una aplicación.\nDicto workshops y charlas acerca de desarrollo de software como FullStack NodeJS Developer.\n",
+        "startAt": "2019-09-01",
+        "location": "Perú",
+        "company": "Independiente",
+        "title": "Software Consultant"
+      },
+      {
+        "id": "recwRt4wPTSfDQ632",
+        "lines": "Construí la más reciente versión de la plataforma e-commerce, soportando características generales y especificas en cada una las instancias replicadas de nuestros clientes.\nImplementé y mantuve características dentro de nuestro GraphQL API. Así como también mejoras en el tratamiento de las transacciones web.\nIntegré sistemas de terceros con nuestro API con el fin de mantener ambos entornos actualizados, implementando un servido de integración basado en flujo de datos.\nImplementé la librería de componentes web para el sistema de diseño de la compañía, estando en constante evolución debid al uso de la misma en diferentes proyectos.\n",
+        "startAt": "2018-02-01",
+        "location": "Lima - Perú",
+        "endAt": "2019-08-31",
+        "company": "Riqra",
+        "description": "Riqra construye una solución e-commerce dedicada a digitalizar las ventas B2B de LATAM.",
+        "title": "Full-Stack NodeJS Developer"
+      }
+    ],
+    "name": "ES - Soffware Engineer",
+    "primaryColor": "#1d4ed8",
+    "techGroups": [
+      {
+        "id": "recE4YJkuzLv8y0xE",
+        "title": "Frontend",
+        "tags": [
+          "React",
+          "React Native",
+          "NextJS",
+          "Gatsby",
+          "TailwindCSS",
+          "CSS-in-JS",
+          "Apollo Client",
+          "Storybook",
+          "React Spring",
+          "Webpack",
+          "Rollup"
+        ]
+      },
+      {
+        "id": "recMwQtsfARTSMFZh",
+        "title": "Backend",
+        "tags": [
+          "NodeJS",
+          "Sequelize",
+          "Apollo Server",
+          "MySQL",
+          "Postgres",
+          "Redis",
+          "Docker",
+          "RabbitMQ",
+          "Kafka"
+        ]
+      },
+      {
+        "id": "reck6tsBdYxMGY0y2",
+        "title": "Pruebas",
+        "tags": [
+          "Jest",
+          "Ava",
+          "ReactTestingLibrary",
+          "Puppeteer",
+          "Unit/Integration/E2E"
+        ]
+      },
+      {
+        "id": "reciJWQXRW2H9SLPt",
+        "title": "Lenguajes",
+        "tags": [
+          "ES6",
+          "Typescript",
+          "Python",
+          "Kotlin",
+          "Java",
+          "C#",
+          "C",
+          "C++"
+        ]
+      },
+      {
+        "id": "recDTZcv0f6Vn6dQ2",
+        "title": "Plataformas y Servicios",
+        "tags": [
+          "CircleCI",
+          "Github Actions",
+          "Heroku",
+          "App Center",
+          "Cloudinary",
+          "Algolia",
+          "Forest Admin",
+          "Postmark"
+        ]
+      },
+      {
+        "id": "recDxN4JRO1QVTPdP",
+        "title": "Patrones y Arquitecturas",
+        "tags": ["MVC", "MVP", "TDD", "DDD", "N-Layers", "Clean Architecture"]
+      }
+    ],
+    "aboutMe": "Soy ingeniero de software con +4 años de experiencia profesional construyendo software web y mobile. Ex-participante de concursos de programación competitiva. Uso NodeJS como ecosistema de desarrollo de software. #React, #TailwindCSS, #GraphQL, #TypeScript",
+    "workProjects": [
+      {
+        "id": "reclL84keKZUlSOUL",
+        "description": "Parte de la suite de Riqra, esta aplicación web dashboard es usada para administrar el contenido y reglas de negocio de una e-commerce.",
+        "title": "Panel - e-commerce Dashboard",
+        "company": "Riqra",
+        "lines": "Desarrollo de proyectos que mejoren la autonomía de nuestros clientes.\nLidero la migración del consumo de GraphQL hacia REST API, decidiendo usar ReactQuery como tecnología para la adopción en la petición de datos.\n",
+        "startAt": "2020-07-01",
+        "location": "Trujillo - Perú"
+      },
+      {
+        "id": "recVXuGx23l2wZZ0B",
+        "description": "Aplicación móvil para la toma de pedidos por parte de vendedores hacia la cartera de clientes que ellos manejen.",
+        "title": "Taker - RN Application",
+        "company": "Sumerius",
+        "lines": "React Native, React Navigation v5, PouchDB y React Native Paper, son algunas de las tecnologías con las que cuenta este proyecto.\nUsé App Center de Azure como sistema de CI/CD.\n",
+        "startAt": "2020-01-01",
+        "location": "Trujillo - Perú",
+        "endAt": "2020-03-31"
+      },
+      {
+        "id": "recdcPg8PL9AHrDrI",
+        "description": "Plataforma e-commerce B2B/B2C ofrecida como un SaaS a multiples compañías proveedoras y distribuidoras dentro de LATAM.",
+        "title": "Sellers - e-commerce SaaS",
+        "company": "Riqra",
+        "lines": "Desarrollé el e-commerce y parte del panel administrativo usando tecnologías como NextJS, ApolloClient, StyledComponents, Cloudinary, CircleCI y Heroku.\nImplementé y mantuve características para el GraphQL API usando tecnologias como Sequelize, ApolloServer, JWT, BullJS, Docker, MySQL, Redis, Jest, CircleCI y Heroku.\n",
+        "startAt": "2018-02-01",
+        "location": "Lima - Perú",
+        "endAt": "2019-08-31"
+      },
+      {
+        "id": "rectToi7cjmgKzARY",
+        "description": "Servicio de integración entre el GraphQL API y sistemas de terceros con el fin de mantener ambos entornos actualizados.",
+        "title": "Hyperbola - Integration Server",
+        "company": "Riqra",
+        "lines": "Basado en esquemas que definían el flujo de datos de las operaciones de integración (Inspirado en parabola.io).\nEl sistema tenia la responsabilidad de ejecutar cron jobs para la sincronización de catálogos de productos.\n",
+        "startAt": "2018-12-01",
+        "location": "Lima - Perú",
+        "endAt": "2019-08-31"
+      },
+      {
+        "id": "recVaqBW7qpAAWXwo",
+        "description": "Librería de componentes React para el sistema de diseño de la compañía, enfocada en CSS-in-JS. Usando Storybook como entorno de desarrollo.",
+        "title": "Truck - Design System",
+        "company": "Riqra",
+        "startAt": "2018-06-01",
+        "location": "Lima - Perú",
+        "endAt": "2019-08-31"
+      }
+    ],
+    "createdAt": "2021-01-16"
+  }
+}

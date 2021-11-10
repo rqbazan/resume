@@ -11,7 +11,7 @@ type Query = {
 }
 
 export default async (req: VercelRequest, res: VercelResponse) => {
-  const { id, lang = 'es' } = req.query as Query
+  const { id, lang = 'en' } = req.query as Query
 
   const [techProfile, techResume] = await Promise.all([
     getTechProfile(),

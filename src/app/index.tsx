@@ -28,7 +28,7 @@ export interface AppProps extends AppDocumentProps {
 
 const styles = StyleSheet.create({
   page: {
-    paddingVertical: 48,
+    paddingTop: 48,
     paddingHorizontal: 50,
   },
   row: {
@@ -159,46 +159,48 @@ function AppDocument({ techProfile, techResume }: AppDocumentProps) {
           </View>
         </View>
       </Page>
-      <Page size="A4" style={styles.page}>
-        <Watermark />
-        <View style={styles.row}>
-          <View style={styles.leftColumn}>
-            <Section title={s['title.projects']} spacing={8}>
-              {techResume.workProjects.map((workProject) => (
-                <WorkPost
-                  key={workProject.id}
-                  title={workProject.title}
-                  location={workProject.location}
-                  companyName={workProject.company}
-                  startAt={workProject.startAt}
-                  endAt={workProject.endAt}
-                  description={workProject.description}
-                >
-                  {workProject.lines
-                    ?.split('\n')
-                    .filter(Boolean)
-                    .map((line, i) => (
-                      <ListItem key={`${workProject.id}-line-${i}`}>
-                        {line}
-                      </ListItem>
-                    ))}
-                </WorkPost>
-              ))}
-            </Section>
+      {techResume.workProjects?.length > 0 ? (
+        <Page size="A4" style={styles.page}>
+          <Watermark />
+          <View style={styles.row}>
+            <View style={styles.leftColumn}>
+              <Section title={s['title.projects']} spacing={8}>
+                {techResume.workProjects.map((workProject) => (
+                  <WorkPost
+                    key={workProject.id}
+                    title={workProject.title}
+                    location={workProject.location}
+                    companyName={workProject.company}
+                    startAt={workProject.startAt}
+                    endAt={workProject.endAt}
+                    description={workProject.description}
+                  >
+                    {workProject.lines
+                      ?.split('\n')
+                      .filter(Boolean)
+                      .map((line, i) => (
+                        <ListItem key={`${workProject.id}-line-${i}`}>
+                          {line}
+                        </ListItem>
+                      ))}
+                  </WorkPost>
+                ))}
+              </Section>
+            </View>
+            <View style={styles.rightColumn}>
+              <Section title={s['title.tech']} spacing={8}>
+                {techResume.techGroups.map((techGroup) => (
+                  <TechGroup
+                    key={techGroup.id}
+                    title={techGroup.title}
+                    tags={techGroup.tags}
+                  />
+                ))}
+              </Section>
+            </View>
           </View>
-          <View style={styles.rightColumn}>
-            <Section title={s['title.tech']} spacing={8}>
-              {techResume.techGroups.map((techGroup) => (
-                <TechGroup
-                  key={techGroup.id}
-                  title={techGroup.title}
-                  tags={techGroup.tags}
-                />
-              ))}
-            </Section>
-          </View>
-        </View>
-      </Page>
+        </Page>
+      ) : null}
     </Document>
   )
 }

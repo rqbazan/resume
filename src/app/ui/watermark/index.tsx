@@ -8,7 +8,7 @@ export function Watermark() {
   const theme = useTheme()
 
   function paint(doc: any) {
-    return doc.path(path).opacity(0.4).strokeColor(theme.colors.gray).stroke()
+    return doc.path(path).opacity(0.3).strokeColor(theme.colors.gray).stroke()
   }
 
   return (

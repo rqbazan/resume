@@ -86,6 +86,12 @@ export async function getTechResume({
   ]
 
   const promises = relations.map(async ({ table, linkField }) => {
+    const IDs = record.get(linkField)
+
+    if (!IDs) {
+      return
+    }
+
     const records = await db(table)
       .select({
         filterByFormula: $in(record.get(linkField)),

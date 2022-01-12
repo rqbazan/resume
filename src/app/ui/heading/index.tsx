@@ -9,7 +9,7 @@ export interface HeadingProps {
   title: string
   subtitle: string
   information: {
-    phone: string
+    phone?: string
     email: string
     website: string
     location: string

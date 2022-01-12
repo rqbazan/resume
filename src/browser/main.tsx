@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import { PDFViewer } from '~/react-pdf'
 import { Lang } from '~/types'
 import { App } from '~/app'
-import data from '~/data/en.json'
+import data from '~/data/es.json'
 import './styles.css'
 
 ReactDOM.render(

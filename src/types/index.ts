@@ -88,7 +88,7 @@ export interface TechProfile {
   location: string
   twitter: string
   github: string
-  phone: string
+  phone?: string
   name: string
   email: string
   freelanceRole: string

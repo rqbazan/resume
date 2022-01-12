@@ -13,19 +13,15 @@
     ],
     "location": "Peru",
     "website": "https://rcrd.space",
-    "email": "raquirozbazan@gmail.com",
-    "phone": "+51 986006178",
+    "email": "ricardo.quiroz@pedidosya.com",
     "github": "https://github.com/rqbazan",
     "linkedin": "https://www.linkedin.com/in/rqbazan",
-    "twitter": "https://twitter.com/rqbazan",
-    "seoDescription": "Software developer mostly with NodeJS 💚 I love to write clean beautiful code even when it's unnecessary.",
-    "seoBanner": "https://res.cloudinary.com/dpwoyjb1f/image/upload/v1610162961/me/social_banner.png",
-    "seoTitle": "Lead Frontend"
+    "twitter": "https://twitter.com/rqbazan"
   },
   "techResume": {
     "id": "recNxIiI11AEqGBYr",
     "name": "EN - Soffware Engineer",
-    "aboutMe": "Software Creator with +4 years of experience working on the frontend and backend side. I've worked with many technologies over the past years, now focused on the Web with Node.js, React, TypeScript, and GraphQL.",
+    "aboutMe": "Software Developer with +5 years of experience working on the frontend and backend side. I've worked with many technologies over the past years, now focused on the Web with Node.js, React, TypeScript, and GraphQL.",
     "published": true,
     "lang": "en",
     "langSkills": [
@@ -68,23 +64,36 @@
       }
     ],
     "keywords": "software,developer,javascript,nodejs",
-    "primaryColor": "#1d4ed8",
+    "primaryColor": "#fa0050",
     "workExperiences": [
+      {
+        "id": "reckmIvfl6DsDEaFt",
+        "title": "Sr. Software Engineer",
+        "company": "PedidosYa",
+        "companyUrl": "https://www.linkedin.com/company/pedidosya/mycompany",
+        "location": "Remote",
+        "description": "PedidosYa is the leading delivery and quick commerce technology company in LATAM. Since 2014 it has been part of Delivery Hero.",
+        "startAt": "2022-01-10",
+        "Tech Resumes": ["recNxIiI11AEqGBYr"]
+      },
       {
         "id": "reckmIvfl6DsDEaFt",
         "title": "Frontend Lead Engineer",
         "company": "Riqra",
-        "location": "Lima - Perú",
+        "companyUrl": "https://www.linkedin.com/company/riqra/",
+        "location": "Remote",
         "description": "Riqra is building an e-commerce suite dedicated to digitize the B2B sales in LATAM.",
         "startAt": "2020-07-01",
-        "lines": "I'm the core maintainer for all the frontend applications, leading structural changes in our architecture. #Leadership\nI'm developing integrations with national and international payment systems. #Payments\n",
+        "endAt": "2022-01-07",
+        "lines": "I was the core maintainer for all the frontend applications, leading structural changes in our architecture. #Leadership\nI developed integrations with national and international payment systems. #Payments\nI started the E2E testing iniciative for the Storefront. #Testing\n",
         "Tech Resumes": ["recNxIiI11AEqGBYr"]
       },
       {
         "id": "recYuPM3hquiVvljs",
         "title": "Backend Node.js Engineer",
         "company": "VISA - VendeMás",
-        "location": "Lima - Perú",
+        "companyUrl": "https://www.vendemas.com.pe/",
+        "location": "Remote",
         "description": "VendeMás provides technologies for middle-entry-level merchants, so they can accept payments with all the credit cards.",
         "startAt": "2020-03-01",
         "endAt": "2020-06-30",
@@ -95,14 +104,17 @@
         "id": "recVCofW95QMMBDDR",
         "title": "Software Consultant",
         "company": "Freelance",
+        "companyUrl": "https://rcrd.space/projects",
         "location": "Perú",
         "startAt": "2019-09-01",
+        "endAt": "2022-01-01",
         "lines": "I provided consulting about modern software development practices, on topics ranging from prototyping to continuous deployment of a web application. #Workflows\nI developed web and mobile solutions using the Node.js ecosystem. #FullStack\nI taught about modern software development as a FullStack Node.js Developer. #DevTalks\n",
         "Tech Resumes": ["recNxIiI11AEqGBYr"]
       },
       {
         "id": "rec6YYXDNBuMGR81l",
         "title": "Full Stack Node.js Developer",
+        "companyUrl": "https://www.linkedin.com/company/riqra/",
         "company": "Riqra",
         "location": "Lima - Perú",
         "description": "Riqra is building an e-commerce suite dedicated to digitize the B2B sales in LATAM.",
@@ -124,7 +136,7 @@
         "Tech Resumes": ["recNxIiI11AEqGBYr"]
       }
     ],
-    "title": "Frontend Lead Engineer",
+    "title": "Sr. Software Engineer",
     "createdAt": "2021-01-21"
   }
 }

@@ -3,16 +3,13 @@
   "techProfile": {
     "id": "rec9sOqORNMskTURz",
     "website": "https://rcrd.space",
-    "seoBanner": "https://res.cloudinary.com/dpwoyjb1f/image/upload/v1610162961/me/social_banner.png",
     "location": "Peru",
     "twitter": "https://twitter.com/rqbazan",
-    "seoDescription": "Software developer mostly with NodeJS 💚 I love to write clean beautiful code even when it's unnecessary.",
     "github": "https://github.com/rqbazan",
     "phone": "+51 986006178",
     "name": "Ricardo Q. Bazan",
     "email": "raquirozbazan@gmail.com",
     "freelanceRole": "Software Consultant",
-    "seoTitle": "Lead Frontend",
     "interests": [
       "problem solving",
       "clean code ",

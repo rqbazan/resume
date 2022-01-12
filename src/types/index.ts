@@ -76,8 +76,8 @@ export interface TechResume {
   strengths: Strength[]
   educationExperiences: EducationExperience[]
   workExperiences: WorkExperience[]
-  techGroups: TechGroup[]
-  workProjects: WorkProject[]
+  techGroups?: TechGroup[]
+  workProjects?: WorkProject[]
   [key: string]: any
 }
 

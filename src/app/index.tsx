@@ -159,13 +159,13 @@ function AppDocument({ techProfile, techResume }: AppDocumentProps) {
           </View>
         </View>
       </Page>
-      {techResume.workProjects?.length > 0 ? (
+      {techResume.workProjects?.length ? (
         <Page size="A4" style={styles.page}>
           <Watermark />
           <View style={styles.row}>
             <View style={styles.leftColumn}>
               <Section title={s['title.projects']} spacing={8}>
-                {techResume.workProjects.map((workProject) => (
+                {techResume.workProjects?.map((workProject) => (
                   <WorkPost
                     key={workProject.id}
                     title={workProject.title}
@@ -189,7 +189,7 @@ function AppDocument({ techProfile, techResume }: AppDocumentProps) {
             </View>
             <View style={styles.rightColumn}>
               <Section title={s['title.tech']} spacing={8}>
-                {techResume.techGroups.map((techGroup) => (
+                {techResume.techGroups?.map((techGroup) => (
                   <TechGroup
                     key={techGroup.id}
                     title={techGroup.title}

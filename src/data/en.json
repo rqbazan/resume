@@ -1,0 +1,130 @@
+{
+  "lang": "en",
+  "techProfile": {
+    "id": "rec9sOqORNMskTURz",
+    "name": "Ricardo Q. Bazan",
+    "nickname": "Santiago",
+    "freelanceRole": "Software Consultant",
+    "interests": [
+      "problem solving",
+      "clean code ",
+      "web development",
+      "api architecture"
+    ],
+    "location": "Peru",
+    "website": "https://rcrd.space",
+    "email": "raquirozbazan@gmail.com",
+    "phone": "+51 986006178",
+    "github": "https://github.com/rqbazan",
+    "linkedin": "https://www.linkedin.com/in/rqbazan",
+    "twitter": "https://twitter.com/rqbazan",
+    "seoDescription": "Software developer mostly with NodeJS 💚 I love to write clean beautiful code even when it's unnecessary.",
+    "seoBanner": "https://res.cloudinary.com/dpwoyjb1f/image/upload/v1610162961/me/social_banner.png",
+    "seoTitle": "Lead Frontend"
+  },
+  "techResume": {
+    "id": "recNxIiI11AEqGBYr",
+    "name": "EN - Soffware Engineer",
+    "aboutMe": "Software Creator with +4 years of experience working on the frontend and backend side. I've worked with many technologies over the past years, now focused on the Web with Node.js, React, TypeScript, and GraphQL.",
+    "published": true,
+    "lang": "en",
+    "langSkills": [
+      {
+        "id": "recTpOHHn2BeqGRUP",
+        "name": "Spanish",
+        "scoreLabel": "Native",
+        "score": 5,
+        "Tech Resumes": ["recNxIiI11AEqGBYr"]
+      },
+      {
+        "id": "recfe8umspTPkDIYc",
+        "name": "English",
+        "scoreLabel": "Intermediate",
+        "score": 3,
+        "Tech Resumes": ["recNxIiI11AEqGBYr"]
+      }
+    ],
+    "strengths": [
+      {
+        "id": "recwybFRNFP3O414U",
+        "name": "Self-taught Person",
+        "description": "Powered by Internet: Online Courses, Youtube, Blogs, etc.",
+        "icon": "search",
+        "Tech Resumes": ["recNxIiI11AEqGBYr"]
+      },
+      {
+        "id": "rec5Lg1zta2fW8yhC",
+        "name": "Creative",
+        "description": "Intelligence for sustainable solutions.",
+        "icon": "puzzle",
+        "Tech Resumes": ["recNxIiI11AEqGBYr"]
+      },
+      {
+        "id": "recdqRdiQAVbnApZE",
+        "name": "Cooperative",
+        "description": "Teamwork, with respect and passion for success.",
+        "icon": "cog",
+        "Tech Resumes": ["recNxIiI11AEqGBYr"]
+      }
+    ],
+    "keywords": "software,developer,javascript,nodejs",
+    "primaryColor": "#1d4ed8",
+    "workExperiences": [
+      {
+        "id": "reckmIvfl6DsDEaFt",
+        "title": "Frontend Lead Engineer",
+        "company": "Riqra",
+        "location": "Lima - Perú",
+        "description": "Riqra is building an e-commerce suite dedicated to digitize the B2B sales in LATAM.",
+        "startAt": "2020-07-01",
+        "lines": "I'm the core maintainer for all the frontend applications, leading structural changes in our architecture. #Leadership\nI'm developing integrations with national and international payment systems. #Payments\n",
+        "Tech Resumes": ["recNxIiI11AEqGBYr"]
+      },
+      {
+        "id": "recYuPM3hquiVvljs",
+        "title": "Backend Node.js Engineer",
+        "company": "VISA - VendeMás",
+        "location": "Lima - Perú",
+        "description": "VendeMás provides technologies for middle-entry-level merchants, so they can accept payments with all the credit cards.",
+        "startAt": "2020-03-01",
+        "endAt": "2020-06-30",
+        "lines": "I developed microservices using Apache Kafka and RabbitMQ for one main project of e-billing along with Close2U technology. #Backend\nI used TDD to develop high-level quality software, also good and modern software practices. #Testing\nI contributed to one C++ project about the encryption system used by mobile devices. #Security\n",
+        "Tech Resumes": ["recNxIiI11AEqGBYr"]
+      },
+      {
+        "id": "recVCofW95QMMBDDR",
+        "title": "Software Consultant",
+        "company": "Freelance",
+        "location": "Perú",
+        "startAt": "2019-09-01",
+        "lines": "I provided consulting about modern software development practices, on topics ranging from prototyping to continuous deployment of a web application. #Workflows\nI developed web and mobile solutions using the Node.js ecosystem. #FullStack\nI taught about modern software development as a FullStack Node.js Developer. #DevTalks\n",
+        "Tech Resumes": ["recNxIiI11AEqGBYr"]
+      },
+      {
+        "id": "rec6YYXDNBuMGR81l",
+        "title": "Full Stack Node.js Developer",
+        "company": "Riqra",
+        "location": "Lima - Perú",
+        "description": "Riqra is building an e-commerce suite dedicated to digitize the B2B sales in LATAM.",
+        "startAt": "2018-02-01",
+        "endAt": "2019-08-31",
+        "lines": "I implemented the most recent version of the e-commerce platform, supporting different features for different customers in LATAM. #SaaS\nI contributed to the GraphQL API. ~300 deploys to production. #Backend\nI was the creator of the Hyperbola project, the integration server based on data flows. #Innovation\nI was the core maintainer of Truck, the React UI components library. ~100 components built from scratch. #DesignSystem\n",
+        "Tech Resumes": ["recNxIiI11AEqGBYr"]
+      }
+    ],
+    "educationExperiences": [
+      {
+        "id": "recQ9AkZJa5RVLOIp",
+        "title": "Computer Systems Engineering",
+        "almaMater": "Universidad Privada del Norte",
+        "startAt": "2013-03-01",
+        "endAt": "2017-12-31",
+        "location": "San Isidro, Trujillo, La Libertad, Perú",
+        "lines": "In the field of Software Engineering\nCompetitive programming community Leader – ACM-ICPC Contestant\nI took CS courses like data structure, algorithms design & compilers\nI enjoyed learning programming basics from my masters. C++ & Python rocks!\n",
+        "Tech Resumes": ["recNxIiI11AEqGBYr"]
+      }
+    ],
+    "title": "Frontend Lead Engineer",
+    "createdAt": "2021-01-21"
+  }
+}

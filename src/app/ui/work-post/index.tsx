@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Text, Style, View, StyleSheet } from '~/react-pdf'
+import { Text, Style, View, StyleSheet, Link } from '~/react-pdf'
 import { useTheme } from '~/app/hooks'
 import { IconText } from '../icon-text'
 import { DateRange } from '../date-range'
@@ -7,6 +7,7 @@ import { DateRange } from '../date-range'
 export interface WorkPostProps {
   style?: Style
   endAt?: string
+  companyUrl?: string
   startAt: string
   title: string
   companyName: string
@@ -45,20 +46,35 @@ const Title: React.FC<{ style?: Style }> = ({ children, style }) => {
   return <Text style={[styles.title, style!]}>{children}</Text>
 }
 
-const WorkPlace: React.FC<{ style?: Style }> = ({ children, style }) => {
+const WorkPlace: React.FC<{ style?: Style; url?: string }> = ({
+  children,
+  url,
+  style,
+}) => {
   const theme = useTheme()
 
-  return (
-    <Text style={[styles.workPlace, { color: theme.colors.primary }, style!]}>
-      {children}
-    </Text>
-  )
+  const commonStyle = [
+    styles.workPlace,
+    { color: theme.colors.primary },
+    style!,
+  ]
+
+  if (url) {
+    return (
+      <Link src={url}>
+        <Text style={commonStyle}>{children}</Text>
+      </Link>
+    )
+  }
+
+  return <Text style={commonStyle}>{children}</Text>
 }
 
 export const WorkPost = ({
   style,
   title,
   companyName,
+  companyUrl,
   location,
   startAt,
   endAt,
@@ -71,7 +87,9 @@ export const WorkPost = ({
     <View style={style}>
       <Title>{title}</Title>
       <View style={styles.metaInfoContainer}>
-        {companyName && <WorkPlace>{companyName}</WorkPlace>}
+        {companyName ? (
+          <WorkPlace url={companyUrl}>{companyName}</WorkPlace>
+        ) : null}
         <DateRange
           style={{ marginLeft: companyName ? 'auto' : 0, marginRight: 16 }}
           startAt={startAt}
@@ -84,7 +102,9 @@ export const WorkPost = ({
           {description}
         </Text>
       )}
-      {children && <View style={styles.content}>{children}</View>}
+      {React.Children.count(children) > 0 ? (
+        <View style={styles.content}>{children}</View>
+      ) : null}
     </View>
   )
 }

@@ -75,13 +75,14 @@ function AppDocument({ techProfile, techResume }: AppDocumentProps) {
                   key={workExperience.id}
                   title={workExperience.title}
                   companyName={workExperience.company}
+                  companyUrl={workExperience.companyUrl}
                   location={workExperience.location}
                   startAt={workExperience.startAt}
                   endAt={workExperience.endAt}
                   description={workExperience.description}
                 >
                   {workExperience.lines
-                    .split('\n')
+                    ?.split('\n')
                     .filter(Boolean)
                     .map((line, i) => (
                       <ListItem key={`${workExperience.id}-line-${i}`}>

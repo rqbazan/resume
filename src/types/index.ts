@@ -39,6 +39,7 @@ export interface WorkExperience {
   startAt: string
   location: string
   company: string
+  companyUrl?: string
   description?: string
   title: string
   endAt?: string
@@ -84,16 +85,13 @@ export interface TechResume {
 export interface TechProfile {
   id: string
   website: string
-  seoBanner: string
   location: string
   twitter: string
-  seoDescription: string
   github: string
-  phone: string
+  phone?: string
   name: string
   email: string
   freelanceRole: string
-  seoTitle: string
   interests: string[]
   linkedin: string
   nickname: string

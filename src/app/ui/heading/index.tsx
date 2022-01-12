@@ -9,7 +9,7 @@ export interface HeadingProps {
   title: string
   subtitle: string
   information: {
-    phone: string
+    phone?: string
     email: string
     website: string
     location: string
@@ -70,9 +70,11 @@ export function Heading({
           {subtitle}
         </Text>
         <View style={styles.infoContainer}>
-          <Link src={`tel:${phone}`} style={styles.link}>
-            <IconText text={phone} iconName="call" />
-          </Link>
+          {phone ? (
+            <Link src={`tel:${phone}`} style={styles.link}>
+              <IconText text={phone} iconName="call" />
+            </Link>
+          ) : null}
           <Link src={`mailto:${email}`} style={styles.link}>
             <IconText text={email} iconName="atSymbol" />
           </Link>

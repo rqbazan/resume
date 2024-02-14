@@ -10,13 +10,13 @@ export interface DateRangeProps {
   endAt?: string
 }
 
-export function formatDate(dateString: string, format: string = 'LL/yyyy') {
+export function formatDate(dateString: string, format = 'LL/yyyy') {
   const formatString = 'yyyy-MM-dd'
   const referenceDate = new Date()
 
   return dateFnsFormat(
     dateFnsParse(dateString, formatString, referenceDate),
-    format
+    format,
   )
 }
 

@@ -1,5 +1,6 @@
+import { cn } from '~/app/cn'
 import { useTheme } from '~/app/hooks/use-theme'
-import { View, Text, Style, StyleSheet } from '~/react-pdf'
+import { Style, StyleSheet, Text, View } from '~/react-pdf'
 import { Score } from '../score'
 
 export interface LanguageProps {
@@ -30,7 +31,7 @@ export function Language({ style, name, scoreLabel, score }: LanguageProps) {
   const theme = useTheme()
 
   return (
-    <View style={[styles.container, style!]}>
+    <View style={cn(styles.container, style)}>
       <Text style={styles.name}>{name}</Text>
       <Text style={[styles.scoreLabel, { color: theme.colors.text }]}>
         {scoreLabel}

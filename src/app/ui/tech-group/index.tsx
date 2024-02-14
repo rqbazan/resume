@@ -1,5 +1,5 @@
 import { useTheme } from '~/app/hooks/use-theme'
-import { Text, Style, View, StyleSheet } from '~/react-pdf'
+import { Style, StyleSheet, Text, View } from '~/react-pdf'
 
 export interface TechGroupProps {
   style?: Style

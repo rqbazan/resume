@@ -1,21 +1,21 @@
+import { Document, Page, StyleSheet, View } from '~/react-pdf'
 import type { Lang, TechProfile, TechResume } from '~/types'
-import { Document, View, StyleSheet, Page } from '~/react-pdf'
-import { ThemeProvider, StringsProvider, useStrings } from './hooks'
-import {
-  Heading,
-  Section,
-  ListItem,
-  WorkPost,
-  Resume,
-  EducationPost,
-  Language,
-  Insight,
-  TechGroup,
-  SocialMedia,
-  Watermark,
-  IconName,
-} from './ui'
+import { StringsProvider, ThemeProvider, useStrings } from './hooks'
 import { createTheme } from './theme'
+import {
+  EducationPost,
+  Heading,
+  IconName,
+  Insight,
+  Language,
+  ListItem,
+  Resume,
+  Section,
+  SocialMedia,
+  TechGroup,
+  Watermark,
+  WorkPost,
+} from './ui'
 
 export interface AppDocumentProps {
   techProfile: TechProfile

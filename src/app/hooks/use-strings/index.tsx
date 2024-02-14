@@ -16,7 +16,7 @@ function useContextValue(lang: Lang) {
       ...strings.defaults,
       ...strings[lang],
     }
-  }, [lang])
+  }, [strings[lang]])
 }
 
 export function StringsProvider({ lang, children }: StringsProviderProps) {

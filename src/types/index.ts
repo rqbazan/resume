@@ -79,6 +79,7 @@ export interface TechResume {
   workExperiences: WorkExperience[]
   techGroups?: TechGroup[]
   workProjects?: WorkProject[]
+  // biome-ignore lint/suspicious/noExplicitAny: needed for airtable cast
   [key: string]: any
 }
 
@@ -95,5 +96,6 @@ export interface TechProfile {
   interests: string[]
   linkedin: string
   nickname: string
+  // biome-ignore lint/suspicious/noExplicitAny: needed for airtable cast
   [key: string]: any
 }

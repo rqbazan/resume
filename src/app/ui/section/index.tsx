@@ -1,6 +1,7 @@
 import * as React from 'react'
+import { cn } from '~/app/cn'
 import { useTheme } from '~/app/hooks/use-theme'
-import { View, Style, Text, StyleSheet } from '~/react-pdf'
+import { Style, StyleSheet, Text, View } from '~/react-pdf'
 
 export interface SectionProps {
   style?: Style
@@ -36,7 +37,7 @@ export const Section: React.FC<SectionProps> = ({
   const childCount = React.Children.count(children)
 
   return (
-    <View style={[styles.container, style!]}>
+    <View style={cn(styles.container, style)}>
       <Text style={[styles.title, { color: theme.colors.gray }]}>{title}</Text>
       <View
         style={[styles.separator, { backgroundColor: theme.colors.gray }]}

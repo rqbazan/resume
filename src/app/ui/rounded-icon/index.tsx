@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { cn } from '~/app/cn'
 import { useTheme } from '~/app/hooks/use-theme'
 import { StyleSheet, View } from '~/react-pdf'
 import { Icon, IconProps } from '../icon'
@@ -16,11 +17,11 @@ export function RoundedIcon({ style, ...props }: IconProps) {
 
   return (
     <View
-      style={[
+      style={cn(
         styles.container,
         { backgroundColor: theme.colors.ligthGray },
-        style!,
-      ]}
+        style,
+      )}
     >
       <Icon {...props} />
     </View>

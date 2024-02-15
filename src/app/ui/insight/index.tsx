@@ -1,7 +1,8 @@
-import { Text, View, Style, StyleSheet } from '~/react-pdf'
-import { RoundedIcon } from '../rounded-icon'
-import type { IconName } from '../icon'
+import { cn } from '~/app/cn'
 import { useTheme } from '~/app/hooks/use-theme'
+import { Style, StyleSheet, Text, View } from '~/react-pdf'
+import type { IconName } from '../icon'
+import { RoundedIcon } from '../rounded-icon'
 
 export interface InsightProps {
   style?: Style
@@ -30,7 +31,7 @@ export function Insight({ style, title, description, iconName }: InsightProps) {
   const theme = useTheme()
 
   return (
-    <View style={[styles.container, style!]}>
+    <View style={cn(styles.container, style)}>
       {iconName && (
         <RoundedIcon
           size={18}

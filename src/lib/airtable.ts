@@ -12,7 +12,7 @@ interface GetTechResumeOptions {
   lang: Lang
 }
 
-const db = Airtable.base(process.env.AIRTABLE_BASE!)
+const db = Airtable.base(process.env.AIRTABLE_BASE)
 
 function toJSON<T extends FieldSet>(record: Record<T>) {
   return { id: record.id, ...record.fields }
@@ -20,7 +20,7 @@ function toJSON<T extends FieldSet>(record: Record<T>) {
 
 export async function getTechProfile() {
   return db('Tech Profiles')
-    .find(process.env.AIRTABLE_RECORD_ID!)
+    .find(process.env.AIRTABLE_RECORD_ID)
     .then((record) => toJSON(record as unknown as Record<TechProfile>))
 }
 

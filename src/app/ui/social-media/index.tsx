@@ -1,5 +1,5 @@
 import { useTheme } from '~/app/hooks/use-theme'
-import { Text, StyleSheet, View, Link, Style } from '~/react-pdf'
+import { Link, Style, StyleSheet, Text, View } from '~/react-pdf'
 
 export interface SocialMediaProps {
   name: string

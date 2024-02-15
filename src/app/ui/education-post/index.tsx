@@ -1,8 +1,8 @@
 import * as React from 'react'
 import { Style, View } from '~/react-pdf'
-import { WorkPost } from '../work-post'
-import { IconText } from '../icon-text'
 import { DateRange } from '../date-range'
+import { IconText } from '../icon-text'
+import { WorkPost } from '../work-post'
 
 export interface EducationPostProps {
   style?: Style

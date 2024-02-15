@@ -1,8 +1,9 @@
 import * as React from 'react'
-import { Text, Style, View, StyleSheet, Link } from '~/react-pdf'
+import { cn } from '~/app/cn'
 import { useTheme } from '~/app/hooks'
-import { IconText } from '../icon-text'
+import { Link, Style, StyleSheet, Text, View } from '~/react-pdf'
 import { DateRange } from '../date-range'
+import { IconText } from '../icon-text'
 
 export interface WorkPostProps {
   style?: Style
@@ -43,7 +44,7 @@ const styles = StyleSheet.create({
 })
 
 const Title: React.FC<{ style?: Style }> = ({ children, style }) => {
-  return <Text style={[styles.title, style!]}>{children}</Text>
+  return <Text style={cn(styles.title, style)}>{children}</Text>
 }
 
 const WorkPlace: React.FC<{ style?: Style; url?: string }> = ({
@@ -53,11 +54,11 @@ const WorkPlace: React.FC<{ style?: Style; url?: string }> = ({
 }) => {
   const theme = useTheme()
 
-  const commonStyle = [
+  const commonStyle = cn(
     styles.workPlace,
     { color: theme.colors.primary },
-    style!,
-  ]
+    style,
+  )
 
   if (url) {
     return (

@@ -1,5 +1,6 @@
+import { cn } from '~/app/cn'
 import { useTheme } from '~/app/hooks/use-theme'
-import { StyleSheet, Style, Link, View, Text, Image } from '~/react-pdf'
+import { Image, Link, Style, StyleSheet, Text, View } from '~/react-pdf'
 import { IconText } from '../icon-text'
 
 export interface HeadingProps {
@@ -63,7 +64,7 @@ export function Heading({
   const theme = useTheme()
 
   return (
-    <View style={[styles.container, style!]}>
+    <View style={cn(styles.container, style)}>
       <View style={{ margin: 1 }}>
         <Text style={styles.title}>{title}</Text>
         <Text style={[styles.subTitle, { color: theme.colors.primary }]}>

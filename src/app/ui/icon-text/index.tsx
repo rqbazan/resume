@@ -1,5 +1,6 @@
+import { cn } from '~/app/cn'
 import { useTheme } from '~/app/hooks/use-theme'
-import { Text, View, Style, StyleSheet } from '~/react-pdf'
+import { Style, StyleSheet, Text, View } from '~/react-pdf'
 import { Icon, IconName } from '../icon'
 
 export interface IconTextProps {
@@ -24,7 +25,7 @@ export function IconText({ style, text, iconName }: IconTextProps) {
   const theme = useTheme()
 
   return (
-    <View style={[styles.container, style!]}>
+    <View style={cn(styles.container, style)}>
       <Icon size={10} name={iconName} />
       <Text style={[styles.text, { color: theme.colors.text }]}>{text}</Text>
     </View>

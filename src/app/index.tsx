@@ -5,7 +5,7 @@ import { createTheme } from './theme'
 import {
   EducationPost,
   Heading,
-  IconName,
+  type IconName,
   Insight,
   Language,
   ListItem,

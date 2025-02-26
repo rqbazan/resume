@@ -1,4 +1,4 @@
-import { App, AppProps } from '~/app'
+import { App, type AppProps } from '~/app'
 import { renderToStream } from '~/react-pdf'
 import './register-fonts'
 

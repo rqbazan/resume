@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { cn } from '~/app/cn'
 import { useTheme } from '~/app/hooks/use-theme'
-import { Style, StyleSheet, Text, View } from '~/react-pdf'
+import { type Style, StyleSheet, Text, View } from '~/react-pdf'
 
 export interface SectionProps {
   style?: Style
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
   },
 })
 
-export const Section: React.FC<SectionProps> = ({
+export const Section: React.FC<React.PropsWithChildren<SectionProps>> = ({
   style,
   title,
   spacing,

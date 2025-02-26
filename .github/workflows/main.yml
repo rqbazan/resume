@@ -2,6 +2,10 @@ name: CI
 
 on: [push]
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   testing:
     name: 👀 Testing
@@ -9,20 +13,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 🛑 Cancel Previous Runs
-        uses: styfle/cancel-workflow-action@0.11.0
-
       - name: ⬇️ Checkout repo
         uses: actions/checkout@master
+        with:
+          fetch-depth: 0
 
-      - name: ⎔ Setup node
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          run_install: false
+
+      - name: ⎔ Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18
-          cache: "yarn"
+          node-version: 20
+          cache: "pnpm"
 
       - name: 📦 Install dependencies
-        run: yarn install --frozen-lockfile
+        run: pnpm install
 
       - name: 🔎 Static testing
         run: yarn test:static

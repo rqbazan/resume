@@ -2,7 +2,7 @@ import * as React from 'react'
 import { cn } from '~/app/cn'
 import { useTheme } from '~/app/hooks/use-theme'
 import { StyleSheet, View } from '~/react-pdf'
-import { Icon, IconProps } from '../icon'
+import { Icon, type IconProps } from '../icon'
 
 const styles = StyleSheet.create({
   container: {

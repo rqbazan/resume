@@ -1,5 +1,5 @@
 import { cn } from '~/app/cn'
-import { Canvas, Style } from '~/react-pdf'
+import { Canvas, type Style } from '~/react-pdf'
 
 export interface IconProps {
   style?: Style

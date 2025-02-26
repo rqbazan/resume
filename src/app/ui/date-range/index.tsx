@@ -1,7 +1,7 @@
-import dateFnsFormat from 'date-fns/format'
-import dateFnsParse from 'date-fns/parse'
+import { format as dateFnsFormat } from 'date-fns/format'
+import { parse as dateFnsParse } from 'date-fns/parse'
 import { useStrings } from '~/app/hooks'
-import { Style } from '~/react-pdf'
+import type { Style } from '~/react-pdf'
 import { IconText } from '../icon-text'
 
 export interface DateRangeProps {

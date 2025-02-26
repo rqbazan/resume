@@ -1,6 +1,5 @@
-import Airtable from 'airtable'
-import type { FieldSet, Record } from 'airtable'
 import type { Lang, TechProfile, TechResume } from '~/types'
+import { type FieldSet, type Record, db } from './connector.js'
 
 interface Relation {
   table: string
@@ -12,22 +11,31 @@ interface GetTechResumeOptions {
   lang: Lang
 }
 
-const db = Airtable.base(process.env.AIRTABLE_BASE)
+interface GetTechProfileOptions {
+  id: string
+}
 
 function toJSON<T extends FieldSet>(record: Record<T>) {
   return { id: record.id, ...record.fields }
 }
 
-export async function getTechProfile() {
-  return db('Tech Profiles')
-    .find(process.env.AIRTABLE_RECORD_ID)
-    .then((record) => toJSON(record as unknown as Record<TechProfile>))
+export async function getTechProfile({
+  id,
+}: GetTechProfileOptions): Promise<TechProfile | null> {
+  const table = 'Tech Profiles'
+  const record = await db(table).find(id)
+
+  if (!record) {
+    return null
+  }
+
+  return toJSON(record as unknown as Record<TechProfile>)
 }
 
 export async function getTechResume({
   id,
   lang,
-}: GetTechResumeOptions): Promise<TechResume | undefined> {
+}: GetTechResumeOptions): Promise<TechResume | null> {
   const table = 'Tech Resumes'
 
   function $in(IDS: string[]) {
@@ -36,9 +44,7 @@ export async function getTechResume({
 
   async function getTechResumeRecord() {
     if (id) {
-      return db(table)
-        .find(id)
-        .catch((e) => console.log(e))
+      return db(table).find(id)
     }
 
     const [record] = await db(table)
@@ -55,7 +61,7 @@ export async function getTechResume({
   const record = await getTechResumeRecord()
 
   if (!record) {
-    return
+    return null
   }
 
   const relations: Relation[] = [

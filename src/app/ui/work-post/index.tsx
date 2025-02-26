@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { cn } from '~/app/cn'
 import { useTheme } from '~/app/hooks'
-import { Link, Style, StyleSheet, Text, View } from '~/react-pdf'
+import { Link, type Style, StyleSheet, Text, View } from '~/react-pdf'
 import { DateRange } from '../date-range'
 import { IconText } from '../icon-text'
 
@@ -43,15 +43,16 @@ const styles = StyleSheet.create({
   },
 })
 
-const Title: React.FC<{ style?: Style }> = ({ children, style }) => {
+const Title: React.FC<React.PropsWithChildren<{ style?: Style }>> = ({
+  children,
+  style,
+}) => {
   return <Text style={cn(styles.title, style)}>{children}</Text>
 }
 
-const WorkPlace: React.FC<{ style?: Style; url?: string }> = ({
-  children,
-  url,
-  style,
-}) => {
+const WorkPlace: React.FC<
+  React.PropsWithChildren<{ style?: Style; url?: string }>
+> = ({ children, url, style }) => {
   const theme = useTheme()
 
   const commonStyle = cn(

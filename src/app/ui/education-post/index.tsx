@@ -1,5 +1,5 @@
-import * as React from 'react'
-import { Style, View } from '~/react-pdf'
+import type * as React from 'react'
+import { type Style, View } from '~/react-pdf'
 import { DateRange } from '../date-range'
 import { IconText } from '../icon-text'
 import { WorkPost } from '../work-post'
@@ -13,15 +13,9 @@ export interface EducationPostProps {
   location: string
 }
 
-export const EducationPost: React.FC<EducationPostProps> = ({
-  style,
-  title,
-  almaMater,
-  startAt,
-  endAt,
-  location,
-  children,
-}) => {
+export const EducationPost: React.FC<
+  React.PropsWithChildren<EducationPostProps>
+> = ({ style, title, almaMater, startAt, endAt, location, children }) => {
   return (
     <View style={style}>
       <WorkPost.Title>{title}</WorkPost.Title>

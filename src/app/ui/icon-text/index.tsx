@@ -1,7 +1,7 @@
 import { cn } from '~/app/cn'
 import { useTheme } from '~/app/hooks/use-theme'
-import { Style, StyleSheet, Text, View } from '~/react-pdf'
-import { Icon, IconName } from '../icon'
+import { type Style, StyleSheet, Text, View } from '~/react-pdf'
+import { Icon, type IconName } from '../icon'
 
 export interface IconTextProps {
   style?: Style

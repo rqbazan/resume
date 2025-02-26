@@ -1,6 +1,6 @@
 import { cn } from '~/app/cn'
 import { useTheme } from '~/app/hooks/use-theme'
-import { Style, StyleSheet, Text, View } from '~/react-pdf'
+import { type Style, StyleSheet, Text, View } from '~/react-pdf'
 import { Icon } from '../icon'
 
 export interface ListItemProps {

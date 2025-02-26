@@ -1,4 +1,5 @@
 import ReactPDF from '@react-pdf/renderer'
+import type { Styles } from '@react-pdf/renderer'
 
 export const G = ReactPDF.G
 export const Svg = ReactPDF.Svg
@@ -24,7 +25,7 @@ export const ClipPath = ReactPDF.ClipPath
 export const LinearGradient = ReactPDF.LinearGradient
 export const RadialGradient = ReactPDF.RadialGradient
 export const StyleSheet = ReactPDF.StyleSheet
+export const PDFViewer = ReactPDF.PDFViewer
+export const renderToStream = ReactPDF.renderToStream
 
-export type Style = ReactPDF.Styles[string]
-
-export * from '@react-pdf/renderer'
+export type Style = Styles[string]

@@ -1,7 +1,7 @@
-import * as React from 'react'
+import type * as React from 'react'
 import { cn } from '~/app/cn'
 import { useTheme } from '~/app/hooks/use-theme'
-import { Style, StyleSheet, Text } from '~/react-pdf'
+import { type Style, StyleSheet, Text } from '~/react-pdf'
 
 const styles = StyleSheet.create({
   container: {
@@ -10,7 +10,10 @@ const styles = StyleSheet.create({
   },
 })
 
-export const Resume: React.FC<{ style?: Style }> = ({ children, style }) => {
+export const Resume: React.FC<React.PropsWithChildren<{ style?: Style }>> = ({
+  children,
+  style,
+}) => {
   const theme = useTheme()
 
   return (

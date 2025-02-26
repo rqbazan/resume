@@ -1,6 +1,6 @@
 import { cn } from '~/app/cn'
 import { useTheme } from '~/app/hooks/use-theme'
-import { Image, Link, Style, StyleSheet, Text, View } from '~/react-pdf'
+import { Image, Link, type Style, StyleSheet, Text, View } from '~/react-pdf'
 import { IconText } from '../icon-text'
 
 export interface HeadingProps {

@@ -31,7 +31,6 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
-    "@rqbazan/vite-plugin-shim-react-pdf": "1.1.0",
     "@types/node": "22.13.5",
     "@types/react": "19.0.10",
     "@types/react-dom": "19.0.4",

@@ -16,9 +16,19 @@ export const config = {
 }
 
 export default async (req: VercelRequest, res: VercelResponse) => {
-  const { id, lang = 'en' } = req.query as Query
+  if (req.method !== 'GET' && req.method !== 'OPTIONS') {
+    return res.status(405).send({
+      error: 'Method not allowed',
+    })
+  }
+
+  if (req.method === 'OPTIONS') {
+    return res.status(204).send(null)
+  }
 
   try {
+    const { id, lang = 'en' } = req.query as Query
+
     const [techProfile, techResume] = await Promise.all([
       getTechProfile({ id: airtableConfig.defaultProfileId }),
       getTechResume({ id, lang }),
